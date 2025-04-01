@@ -1,0 +1,17 @@
+{
+  "name": "proyecto",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/conf": "^3.0.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "conf": "^13.1.0",
+    "zx": "^8.5.0"
+  }
+}
