@@ -3,15 +3,26 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "cli": "bun cli.ts"
+  },
   "devDependencies": {
     "@types/bun": "latest",
-    "@types/conf": "^3.0.3"
+    "@types/conf": "^3.0.3",
+    "@types/fs-extra": "^11.0.4",
+    "@types/minimist": "^1.2.5",
+    "@types/mock-fs": "^4.13.4",
+    "@types/node": "^22.13.17",
+    "mock-fs": "^5.5.0"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "dependencies": {
+    "chalk": "^5.4.1",
     "conf": "^13.1.0",
-    "zx": "^8.5.0"
+    "fs-extra": "^11.3.0",
+    "minimist": "^1.2.8",
+    "open-editor": "^5.1.0"
   }
 }
