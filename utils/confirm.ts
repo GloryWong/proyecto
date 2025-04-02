@@ -1,9 +1,10 @@
 import { createInterface } from "readline/promises"
+import { stdin, stdout } from "node:process";
 
 async function question(query: string) {
   const rl = createInterface({
-    input: process.stdin,
-    output: process.stdout,
+    input: stdin,
+    output: stdout,
     terminal: true
   })
 
@@ -13,7 +14,9 @@ async function question(query: string) {
   return answer
 }
 
-export async function confirm(query: string, defaultValue: 'yes' | 'no' = 'no') {
+export type ConfirmDefaultValue = 'yes' | 'no'
+
+export async function confirm(query: string, defaultValue: ConfirmDefaultValue = 'no') {
   const hint = defaultValue === 'yes' ? 'Y/n' : 'y/N'
   const answer = (await question(`${query} [${hint}] `)).toLocaleLowerCase() ||
     defaultValue

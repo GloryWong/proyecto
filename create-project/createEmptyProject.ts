@@ -1,10 +1,12 @@
-import path from "node:path";
-import { ROOT_DIR } from "../constants";
 import { confirm } from "../utils/confirm";
-import { openInEditor } from "../utils/openInEditor";
-import { ensureDir, pathExists } from "fs-extra";
+import { ensureDir } from "fs-extra";
 import { initGit } from "../utils/initGit";
 import chalk from "chalk";
+import { isValidProjectName } from "../utils/isValidProjectName";
+import { projectExists } from "../utils/projectExists";
+import { quote } from "../utils/quote";
+import { getProjectPath } from "../utils/getProjectPath";
+import { openProjectInEditor } from "../utils/openProjectInEditor";
 
 interface Options {
   /**
@@ -21,30 +23,31 @@ interface Options {
 
 export async function createEmptyProject(name: string, options: Options = {}) {
   try {
-    const { git = true, open = false } = options
-    const dir = path.join(ROOT_DIR, name)
-
-    if (await pathExists(dir)) {
-      if (await confirm(`Project '${name}' already exists. Do you want to open it?`)) {
-        await openInEditor(dir)
-      }
-      return false
+    const result = isValidProjectName(name)
+    if (!result.valid) {
+      throw `Invalid project name: ${result.error}`
     }
 
+    const { git = true, open = false } = options
+
+    const existent = await projectExists(name)
+    if (existent) return false
+
+    const dir = getProjectPath(name)
     await ensureDir(dir)
-    console.log(chalk.green('Created project', `'${name}'!`))
+    console.log(chalk.green('Created project', quote(name, '!')))
 
     if (git) {
       await initGit(dir)
     }
 
     if (open || await confirm('Do you want to open it?', 'yes')) {
-      await openInEditor(dir)
+      await openProjectInEditor(name)
     }
 
     return true
   } catch (error) {
-    console.error('Failed to create an empty project.', error)
+    console.error(chalk.red('Error: failed to create an empty project.', error))
     return false
   }
 }

@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "cli": "bun cli.ts"
+    "cli": "NODE_ENV=development bun cli.ts"
   },
   "devDependencies": {
     "@types/bun": "latest",

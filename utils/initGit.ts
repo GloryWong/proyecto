@@ -10,7 +10,7 @@ export async function initGit(dir: string) {
     }
     return true
   } catch (error) {
-    console.error('Failed to initialzed with git: git not installed')
+    console.error('Error: failed to initialzed with git: git not installed')
     return false
   }
 }

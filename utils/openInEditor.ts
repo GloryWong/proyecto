@@ -1,6 +1,7 @@
 import path from "node:path";
 import { cwd, env } from "node:process";
 import openEditor from "open-editor";
+import { quote } from "./quote";
 
 interface EditorOptions {
   editor?: string;
@@ -17,10 +18,10 @@ export async function openInEditor(file: string, options: EditorOptions = {}) {
       await openEditor(target, {
         editor: env.EDITOR ?? env.VISUAL ?? env.TERM_PROGRAM
       });
-    console.log(`'${path.basename(file)}'`, 'is opened in editor.')
+    console.log(quote(path.basename(file)), 'is opened in editor.')
     return true
   } catch (error) {
-    console.error('Failed to open', file, 'in editor.', error)
+    console.error('Error: failed to open', file, 'in editor.', error)
     return false
   }
 }
