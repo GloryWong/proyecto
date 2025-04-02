@@ -33,6 +33,10 @@ export async function createEmptyProject(name: string, options: Options = {}) {
     const existent = await projectExists(name)
     if (existent) return false
 
+    if (!(await confirm(`Are you sure to create an empty project called ${quote(name)}?`, 'yes'))) {
+      return false
+    }
+
     const dir = getProjectPath(name)
     await ensureDir(dir)
     console.log(chalk.green('Created project', quote(name, '!')))
