@@ -10,6 +10,7 @@ import minimist from 'minimist'
 import chalk from 'chalk'
 import { CLI_NAME } from './constants'
 import { cloneProject } from './create-project/cloneProject'
+import { searchProject } from './search-project/search-project'
 
 function showHelp() {
   console.log(`
@@ -27,6 +28,7 @@ Commands:
     --no-git                Do not initialize with git
   clone <url>               Clone a git repository to create a project (Only support GitHub web URL)
     --open                  Open project in editor after cloned
+  search                    Search for a project to open
 `)
 }
 
@@ -40,7 +42,7 @@ async function showVersion() {
 async function main() {
   const argv = minimist(_argv.slice(2), {
     boolean: ['help', 'version', 'git'],
-    string: ['create', 'clone'],
+    string: ['create', 'clone', 'search'],
     alias: {
       h: 'help',
       v: 'version',
@@ -76,6 +78,10 @@ async function main() {
     }))
   }
 
+  if (argv._.at(0) === 'search') {
+    toExit(await searchProject())
+  }
+
   if (argv['version']) {
     await showVersion()
     return
@@ -85,6 +91,9 @@ async function main() {
     showHelp()
     return
   }
+
+  // Anything else
+  await searchProject()
 }
 
 main()
