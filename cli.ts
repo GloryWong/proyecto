@@ -24,10 +24,10 @@ Options:
 
 Commands:
   create <name>             Create an empty project
-    --open                  Open project in editor after created
+    --open, -o              Open project in editor after created
     --no-git                Do not initialize with git
   clone <url>               Clone a git repository to create a project (Only support GitHub web URL)
-    --open                  Open project in editor after cloned
+    --open, -o              Open project in editor after cloned
   search                    Search for a project to open
 `)
 }
@@ -46,6 +46,7 @@ async function main() {
     alias: {
       h: 'help',
       v: 'version',
+      o: 'open'
     },
   })
 
