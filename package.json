@@ -1,6 +1,6 @@
 {
   "name": "proyecto-cli",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Proyecto is a lightweight CLI tool for managing local projects",
   "type": "module",
   "keywords": [
@@ -37,7 +37,8 @@
     "@types/minimist": "^1.2.5",
     "@types/mock-fs": "^4.13.4",
     "@types/node": "^22.13.17",
-    "mock-fs": "^5.5.0"
+    "mock-fs": "^5.5.0",
+    "type-fest": "^4.39.1"
   },
   "peerDependencies": {
     "typescript": "^5"

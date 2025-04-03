@@ -11,6 +11,8 @@ import chalk from 'chalk'
 import { CLI_NAME } from './constants'
 import { cloneProject } from './create-project/cloneProject'
 import { searchProject } from './search-project/search-project'
+import { readJson } from 'fs-extra'
+import type { PackageJson } from "type-fest";
 
 function showHelp() {
   console.log(`
@@ -33,10 +35,8 @@ Commands:
 }
 
 async function showVersion() {
-  const version = (await Bun.file(
-    path.join(import.meta.dirname, 'version.txt'),
-  ).text()).trim()
-  console.log(version)
+  const pkg: PackageJson = await readJson(path.join(import.meta.dirname, 'package.json'))
+  console.log(pkg.version)
 }
 
 async function main() {
