@@ -1,5 +1,5 @@
 {
-  "name": "proyecto",
+  "name": "proyecto-cli",
   "version": "0.0.0",
   "description": "Proyecto is a lightweight CLI tool for managing local projects",
   "type": "module",
@@ -7,7 +7,12 @@
     "project",
     "cli",
     "command line interface",
-    "pro"
+    "pro",
+    "manage",
+    "create",
+    "clone",
+    "git",
+    "github"
   ],
   "author": {
     "name": "Glory Wong",
@@ -15,7 +20,8 @@
   },
   "license": "MIT",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "bin": {
     "pro": "./cli.ts"

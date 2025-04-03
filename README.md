@@ -9,7 +9,7 @@ Proyecto relies on the Bun runtime. Please ensure that you have [Bun installed](
 Install Proyecto globally using Bun:
 
 ```bash
-bun add -g proyecto
+bun add -g proyecto-cli
 ```
 
 ## Usage
@@ -25,7 +25,7 @@ Help output:
 ```
 Proyecto - A local project manager
 
-Usage: ${CLI_NAME} [command] [options]
+Usage: pro [command] [options]
 
 Options:
   --help, -h                Show this help message
