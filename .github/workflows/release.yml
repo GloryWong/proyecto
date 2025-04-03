@@ -12,7 +12,8 @@ on:
 permissions:
   contents: write
   pull-requests: write
-
+  repository-projects: read
+  
 jobs:
   release-please:
     runs-on: ubuntu-latest
