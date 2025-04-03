@@ -1,6 +1,6 @@
 {
   "name": "proyecto-cli",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Proyecto is a lightweight CLI tool for managing local projects",
   "type": "module",
   "keywords": [
