@@ -1,22 +1,26 @@
-# proyecto
+# Proyecto
 
-A lightweight CLI to manage local projects.
+Proyecto is a lightweight CLI tool for managing local projects.
 
 ## Install
 
-```bash
-npm install -g proyecto
+Proyecto relies on the Bun runtime. Please ensure that you have [Bun installed](https://bun.sh/docs/installation) before proceeding.
 
-# pnpm add -g proyecto
-# yarn add -g proyecto
-# bun add -g proyecto
+Install Proyecto globally using Bun:
+
+```bash
+bun add -g proyecto
 ```
 
 ## Usage
 
+To get started, run:
+
 ```bash
 pro --help
 ```
+
+Help output:
 
 ```
 Proyecto - A local project manager
