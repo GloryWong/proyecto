@@ -1,3 +1,6 @@
+version: 2
+report_sizes: true
+
 builds:
   - builder: bun
     main: "cli.ts"
@@ -8,9 +11,7 @@ builds:
       - --asset-naming="[name].[ext]"
 
 archives:
-  - format: binary
-
-report_sizes: true
+  - formats: binary
 
 brews:
   - url_template: "https://github.com/GloryWong/proyecto/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
