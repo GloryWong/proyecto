@@ -13,6 +13,7 @@ import { cloneProject } from './create-project/cloneProject'
 import { searchProject } from './search-project/search-project'
 import { readJson } from 'fs-extra'
 import type { PackageJson } from "type-fest";
+import './package.json' with { type: 'file' } // instruct `bun compile` to embed the package.json
 
 function showHelp() {
   console.log(`
@@ -35,7 +36,7 @@ Commands:
 }
 
 async function showVersion() {
-  const pkg: PackageJson = await readJson(path.join(import.meta.dirname, 'package.json'))
+  const pkg: PackageJson = await readJson(path.join(import.meta.dir, 'package.json'))
   console.log(pkg.version)
 }
 

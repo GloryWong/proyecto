@@ -1,0 +1,26 @@
+builds:
+  - builder: bun
+    main: "cli.ts"
+    flags:
+      - --compile
+      - --minify
+      - --sourcemap
+      - --asset-naming="[name].[ext]"
+
+archives:
+  - format: binary
+
+report_sizes: true
+
+brews:
+  - url_template: "https://github.com/GloryWong/proyecto/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+    # Caveats for the user of your binary.
+    caveats: "proyecto --help"
+    description: "Proyecto is a lightweight CLI tool for managing local projects"
+    license: "MIT"
+    test: system "#{bin}/proyecto --version"
+    # Repository to push the generated files to.
+    repository:
+      owner: GloryWong
+      name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_GITHUB_TOKEN }}"

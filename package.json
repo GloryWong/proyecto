@@ -28,7 +28,8 @@
   },
   "repository": "https://github.com/GloryWong/proyecto",
   "scripts": {
-    "cli": "NODE_ENV=development bun cli.ts"
+    "cli": "NODE_ENV=development bun cli.ts",
+    "compile": "bun build --compile --minify --asset-naming='[name].[ext]' --outfile=dist/proyecto cli.ts"
   },
   "devDependencies": {
     "@types/bun": "latest",
