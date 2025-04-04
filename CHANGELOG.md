@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.4](https://github.com/GloryWong/proyecto/compare/v1.3.3...v1.3.4) (2025-04-04)
+
+
+### Bug Fixes
+
+* ci update goreleaser ([db989fc](https://github.com/GloryWong/proyecto/commit/db989fcb7616a81d71349b863bd75bd5dae2dff7))
+
 ## [1.3.3](https://github.com/GloryWong/proyecto/compare/v1.3.2...v1.3.3) (2025-04-04)
 
 
