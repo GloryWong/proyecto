@@ -11,12 +11,17 @@ builds:
       - --asset-naming="[name].[ext]"
 
 archives:
-  - formats: binary
+  - formats: ["tar.gz"]
+  - format_overrides:
+      - goos: windows
+        formats: ["zip"]
 
 brews:
   - url_template: "https://github.com/GloryWong/proyecto/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+    directory: Formula
     # Caveats for the user of your binary.
     caveats: "proyecto --help"
+    homepage: "https://github.com/GloryWong/proyecto"
     description: "Proyecto is a lightweight CLI tool for managing local projects"
     license: "MIT"
     test: system "#{bin}/proyecto --version"
