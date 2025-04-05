@@ -1,3 +1,16 @@
+![GitHub License](https://img.shields.io/github/license/GloryWong/proyecto)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/GloryWong/proyecto)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/GloryWong/proyecto/release.yml)
+![GitHub Release](https://img.shields.io/github/v/release/GloryWong/proyecto)
+![GitHub Release Date](https://img.shields.io/github/release-date/GloryWong/proyecto)
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/GloryWong/proyecto)
+![GitHub watchers](https://img.shields.io/github/watchers/GloryWong/proyecto)
+![GitHub forks](https://img.shields.io/github/forks/GloryWong/proyecto)
+![GitHub Repo stars](https://img.shields.io/github/stars/GloryWong/proyecto)
+![NPM Version](https://img.shields.io/npm/v/proyecto)
+![NPM Type Definitions](https://img.shields.io/npm/types/proyecto)
+![NPM Downloads](https://img.shields.io/npm/dw/proyecto)
+
 # Proyecto
 
 Proyecto is a lightweight CLI tool for managing local projects.
