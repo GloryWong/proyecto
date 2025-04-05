@@ -25,7 +25,7 @@ jobs:
         with:
           release-type: node
     outputs:
-        release_created: ${{ steps.release.outputs.release_created }}
+      release_created: ${{ steps.release.outputs.release_created }}
 
   publish:
     needs: release

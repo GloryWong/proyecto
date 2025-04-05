@@ -3,7 +3,7 @@ report_sizes: true
 
 builds:
   - builder: bun
-    main: "cli.ts"
+    main: cli.ts
     flags:
       - --compile
       - --minify
@@ -11,22 +11,22 @@ builds:
       - --asset-naming="[name].[ext]"
 
 archives:
-  - formats: ["tar.gz"]
+  - formats: [tar.gz]
     format_overrides:
       - goos: windows
-        formats: ["zip"]
+        formats: [zip]
 
 brews:
-  - url_template: "https://github.com/GloryWong/proyecto/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+  - url_template: 'https://github.com/GloryWong/proyecto/releases/download/{{ .Tag }}/{{ .ArtifactName }}'
     directory: Formula
     # Caveats for the user of your binary.
-    caveats: "proyecto --help"
-    homepage: "https://github.com/GloryWong/proyecto"
-    description: "Proyecto is a lightweight CLI tool for managing local projects"
-    license: "MIT"
+    caveats: proyecto --help
+    homepage: 'https://github.com/GloryWong/proyecto'
+    description: Proyecto is a lightweight CLI tool for managing local projects
+    license: MIT
     test: system "#{bin}/proyecto --version"
     # Repository to push the generated files to.
     repository:
       owner: GloryWong
       name: homebrew-tap
-      token: "{{ .Env.HOMEBREW_GITHUB_TOKEN }}"
+      token: '{{ .Env.HOMEBREW_GITHUB_TOKEN }}'

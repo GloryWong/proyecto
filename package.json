@@ -1,8 +1,14 @@
 {
   "name": "proyecto-cli",
+  "type": "module",
   "version": "2.2.0",
   "description": "Proyecto is a lightweight CLI tool for managing local projects",
-  "type": "module",
+  "author": {
+    "name": "Glory Wong",
+    "email": "glorywong1001@gmail.com"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/GloryWong/proyecto",
   "keywords": [
     "project",
     "cli",
@@ -14,11 +20,6 @@
     "git",
     "github"
   ],
-  "author": {
-    "name": "Glory Wong",
-    "email": "glorywong1001@gmail.com"
-  },
-  "license": "MIT",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
@@ -26,19 +27,11 @@
   "bin": {
     "proyecto": "./cli.ts"
   },
-  "repository": "https://github.com/GloryWong/proyecto",
   "scripts": {
     "cli": "NODE_ENV=development bun cli.ts",
-    "compile": "bun build --compile --minify --asset-naming='[name].[ext]' --outfile=dist/proyecto cli.ts"
-  },
-  "devDependencies": {
-    "@types/bun": "latest",
-    "@types/fs-extra": "^11.0.4",
-    "@types/minimist": "^1.2.5",
-    "@types/mock-fs": "^4.13.4",
-    "@types/node": "^22.13.17",
-    "mock-fs": "^5.5.0",
-    "type-fest": "^4.39.1"
+    "compile": "bun build --compile --minify --asset-naming='[name].[ext]' --outfile=dist/proyecto cli.ts",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
   },
   "peerDependencies": {
     "typescript": "^5"
@@ -54,5 +47,16 @@
     "minimist": "^1.2.8",
     "open-editor": "^5.1.0",
     "trash": "^9.0.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.11.0",
+    "@types/bun": "latest",
+    "@types/fs-extra": "^11.0.4",
+    "@types/minimist": "^1.2.5",
+    "@types/mock-fs": "^4.13.4",
+    "@types/node": "^22.13.17",
+    "eslint": "^9.24.0",
+    "mock-fs": "^5.5.0",
+    "type-fest": "^4.39.1"
   }
 }

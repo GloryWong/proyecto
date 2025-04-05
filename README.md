@@ -58,7 +58,7 @@ Proyecto - A Local Project Manager
 
 Proyecto helps you manage your project directories effortlessly without interfering with their contents.
 
-When open a project, it automatically detects the editor to use via the `$EDITOR`, `$VISUAL`, or `$TERM_PROGRAM` environment variables.  
+When open a project, it automatically detects the editor to use via the `$EDITOR`, `$VISUAL`, or `$TERM_PROGRAM` environment variables.
 If none of these are set, the system's default editor will be used.
 
 If no valid command or option is provided, you will be prompted to select a project to open in your editor.

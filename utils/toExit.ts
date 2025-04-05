@@ -1,4 +1,4 @@
-import { exit } from "node:process";
+import { exit } from 'node:process'
 
 /**
  * Exit process

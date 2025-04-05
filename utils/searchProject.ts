@@ -1,8 +1,8 @@
-import search from '@inquirer/search';
-import { readdir } from 'fs-extra';
-import { ROOT_DIR } from '../constants';
-import fuzzysort from 'fuzzysort';
-import { openProjectInEditor } from './openProjectInEditor';
+import search from '@inquirer/search'
+import { readdir } from 'fs-extra'
+import fuzzysort from 'fuzzysort'
+import { ROOT_DIR } from '../constants.js'
+import { openProjectInEditor } from './openProjectInEditor.js'
 
 export async function searchProject(message: string): Promise<string>
 export async function searchProject(message: string, open: boolean): Promise<boolean>
@@ -12,7 +12,7 @@ export async function searchProject(message: string, open = false) {
 
   const answer = await search<string>({
     message,
-    source: async (term) => {
+    async source(term) {
       if (!term?.trim()) {
         return names
       }

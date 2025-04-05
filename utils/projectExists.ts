@@ -1,9 +1,8 @@
-
-import { pathExists } from "fs-extra"
-import confirm from '@inquirer/confirm';
-import { quote } from "./quote"
-import { getProjectPath } from "./getProjectPath"
-import { openProjectInEditor } from "./openProjectInEditor"
+import confirm from '@inquirer/confirm'
+import { pathExists } from 'fs-extra'
+import { getProjectPath } from './getProjectPath.js'
+import { openProjectInEditor } from './openProjectInEditor.js'
+import { quote } from './quote.js'
 
 interface Options {
   /**
@@ -25,10 +24,11 @@ export async function projectExists(name: string, options: Options = {}) {
   if (await pathExists(dir)) {
     if (promptToOpen && await confirm({
       message: `Project ${quote(name)} already exists. Do you want to open it?`,
-      default: promptToOpenDefault
+      default: promptToOpenDefault,
     })) {
       await openProjectInEditor(name)
     }
+
     return true
   }
 

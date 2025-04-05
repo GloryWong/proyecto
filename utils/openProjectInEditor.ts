@@ -1,8 +1,7 @@
-import { pathExists } from "fs-extra";
-import { getProjectPath } from "./getProjectPath";
-import { openInEditor } from "./openInEditor";
-import { quote } from "./quote";
-import { projectExists } from "./projectExists";
+import { getProjectPath } from './getProjectPath.js'
+import { openInEditor } from './openInEditor.js'
+import { projectExists } from './projectExists.js'
+import { quote } from './quote.js'
 
 export async function openProjectInEditor(name: string) {
   if (!(await projectExists(name, { promptToOpen: false }))) {

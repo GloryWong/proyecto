@@ -1,12 +1,12 @@
-import confirm from '@inquirer/confirm';
-import { ensureDir } from "fs-extra";
-import { initGit } from "./utils/initGit";
-import chalk from "chalk";
-import { isValidProjectName } from "./utils/isValidProjectName";
-import { projectExists } from "./utils/projectExists";
-import { quote } from "./utils/quote";
-import { getProjectPath } from "./utils/getProjectPath";
-import { openProjectInEditor } from "./utils/openProjectInEditor";
+import confirm from '@inquirer/confirm'
+import chalk from 'chalk'
+import { ensureDir } from 'fs-extra'
+import { getProjectPath } from './utils/getProjectPath.js'
+import { initGit } from './utils/initGit.js'
+import { isValidProjectName } from './utils/isValidProjectName.js'
+import { openProjectInEditor } from './utils/openProjectInEditor.js'
+import { projectExists } from './utils/projectExists.js'
+import { quote } from './utils/quote.js'
 
 interface Options {
   /**
@@ -15,7 +15,7 @@ interface Options {
    */
   git?: boolean
   /**
-   * whether open the project after created
+   * Whether open the project after created
    * @default false
    */
   open?: boolean
@@ -25,17 +25,19 @@ export async function createEmptyProject(name: string, options: Options = {}) {
   try {
     const result = isValidProjectName(name)
     if (!result.valid) {
-      throw `Invalid project name: ${result.error}`
+      throw new Error(`Invalid project name: ${result.error}`)
     }
 
     const { git = true, open = false } = options
 
     const existent = await projectExists(name)
-    if (existent) return false
+    if (existent) {
+      return false
+    }
 
     if (!(await confirm({
       message: `Are you sure to create an empty project called ${quote(name)}?`,
-      default: true
+      default: true,
     }))) {
       return false
     }
@@ -50,13 +52,14 @@ export async function createEmptyProject(name: string, options: Options = {}) {
 
     if (open || await confirm({
       message: 'Do you want to open it?',
-      default: true
+      default: true,
     })) {
       await openProjectInEditor(name)
     }
 
     return true
-  } catch (error) {
+  }
+  catch (error) {
     console.error(chalk.red('Error: failed to create an empty project.', error))
     return false
   }

@@ -1,5 +1,5 @@
-import path from "node:path";
-import os, { tmpdir } from "node:os";
+import os, { tmpdir } from 'node:os'
+import path from 'node:path'
 
 // Names
 export const APP_NAME = 'proyecto-cli'

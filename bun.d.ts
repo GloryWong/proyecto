@@ -1,5 +1,5 @@
-declare module "bun" {
+declare module 'bun' {
   interface Env {
-    AWESOME: string;
+    AWESOME: string
   }
 }

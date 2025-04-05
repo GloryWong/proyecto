@@ -1,23 +1,23 @@
 #!/usr/bin/env bun
 
-import { argv as _argv } from 'bun'
-import { init } from './init'
-import { createEmptyProject } from './create-empty-project'
-import { exit } from 'node:process'
-import { toExit } from './utils/toExit'
+import type { PackageJson } from 'type-fest'
 import path from 'node:path'
-import minimist from 'minimist'
-import chalk from 'chalk'
-import { CLI_NAME } from './constants'
-import { cloneProject } from './clone-project'
-import { readJson } from 'fs-extra'
-import type { PackageJson } from "type-fest";
-import './package.json' with { type: 'file' } // instruct `bun compile` to embed the package.json
+import { exit } from 'node:process'
 import input from '@inquirer/input'
-import { isValidProjectName } from './utils/isValidProjectName'
-import { deleteProject } from './delete-project'
-import { openProject } from './open-project'
-import { searchProject } from './utils/searchProject'
+import { argv as _argv } from 'bun'
+import chalk from 'chalk'
+import { readJson } from 'fs-extra'
+import minimist from 'minimist'
+import { cloneProject } from './clone-project.js'
+import { CLI_NAME } from './constants.js'
+import { createEmptyProject } from './create-empty-project.js'
+import { deleteProject } from './delete-project.js'
+import { init } from './init.js'
+import { openProject } from './open-project.js'
+import { isValidProjectName } from './utils/isValidProjectName.js'
+import { searchProject } from './utils/searchProject.js'
+import { toExit } from './utils/toExit.js'
+import './package.json' with { type: 'file' } // Instruct `bun compile` to embed the package.json
 
 function showHelp() {
   console.log(`Proyecto - A Local Project Manager
@@ -47,8 +47,8 @@ ${chalk.bold('Commands')}:
 }
 
 async function showVersion() {
-  const pkg: PackageJson = await readJson(path.join(import.meta.dir, 'package.json'))
-  console.log(pkg.version)
+  const package_: PackageJson = await readJson(path.join(import.meta.dir, 'package.json'))
+  console.log(package_.version)
 }
 
 async function main() {
@@ -58,11 +58,13 @@ async function main() {
     alias: {
       h: 'help',
       v: 'version',
-      o: 'open'
+      o: 'open',
     },
   })
 
-  if (!(await init())) exit(1)
+  if (!(await init())) {
+    exit(1)
+  }
 
   if (argv._.at(0) === 'open') {
     const name = argv._.at(1)?.trim()
@@ -71,20 +73,18 @@ async function main() {
 
   if (argv._.at(0) === 'create') {
     let name = argv._.at(1)?.trim()
-    if (!name) {
-      name = await input({
-        message: 'Enter project name:',
-        required: true,
-        validate: (val) => {
-          const { error } = isValidProjectName(val)
-          return error ? error : true
-        }
-      })
-    }
+    name ||= await input({
+      message: 'Enter project name:',
+      required: true,
+      validate(value) {
+        const { error } = isValidProjectName(value)
+        return error || true
+      },
+    })
 
     toExit(await createEmptyProject(name, {
-      git: argv['git'],
-      open: argv['open']
+      git: argv.git,
+      open: argv.open,
     }))
   }
 
@@ -97,7 +97,7 @@ async function main() {
     }
 
     toExit(await cloneProject(url, {
-      open: argv['open']
+      open: argv.open,
     }))
   }
 
@@ -106,12 +106,12 @@ async function main() {
     toExit(await deleteProject(name))
   }
 
-  if (argv['version']) {
+  if (argv.version) {
     await showVersion()
     return
   }
 
-  if (argv['help']) {
+  if (argv.help) {
     showHelp()
     return
   }
