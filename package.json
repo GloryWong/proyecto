@@ -8,7 +8,14 @@
     "email": "glorywong1001@gmail.com"
   },
   "license": "MIT",
-  "repository": "https://github.com/GloryWong/proyecto",
+  "homepage": "https://github.com/GloryWong/proyecto#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GloryWong/proyecto.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GloryWong/proyecto/issues"
+  },
   "keywords": [
     "project",
     "cli",
@@ -30,6 +37,7 @@
   "scripts": {
     "cli": "NODE_ENV=development bun cli.ts",
     "compile": "bun build --compile --minify --asset-naming='[name].[ext]' --outfile=dist/proyecto cli.ts",
+    "prepare": "simple-git-hooks",
     "lint": "eslint",
     "lint:fix": "eslint --fix"
   },
@@ -50,13 +58,24 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.11.0",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
     "@types/bun": "latest",
     "@types/fs-extra": "^11.0.4",
     "@types/minimist": "^1.2.5",
     "@types/mock-fs": "^4.13.4",
     "@types/node": "^22.13.17",
     "eslint": "^9.24.0",
+    "lint-staged": "^15.5.0",
     "mock-fs": "^5.5.0",
+    "simple-git-hooks": "^2.12.1",
     "type-fest": "^4.39.1"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged",
+    "commit-msg": "pnpm commitlint --edit ${1}"
+  },
+  "lint-staged": {
+    "*": "pnpm lint:fix"
   }
 }
