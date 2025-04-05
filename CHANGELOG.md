@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/GloryWong/proyecto/compare/v1.3.5...v2.0.0) (2025-04-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* update bin pro to proyecto and also publish to homebrew
+
+### Features
+
+* update bin pro to proyecto and also publish to homebrew ([ac6ee6a](https://github.com/GloryWong/proyecto/commit/ac6ee6a6785785f58f5303dea35fa23ac99d8b3a))
+
 ## [1.3.5](https://github.com/GloryWong/proyecto/compare/v1.3.4...v1.3.5) (2025-04-04)
 
 
