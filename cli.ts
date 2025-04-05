@@ -14,6 +14,8 @@ import { searchProject } from './search-project/search-project'
 import { readJson } from 'fs-extra'
 import type { PackageJson } from "type-fest";
 import './package.json' with { type: 'file' } // instruct `bun compile` to embed the package.json
+import input from '@inquirer/input'
+import { isValidProjectName } from './utils/isValidProjectName'
 
 function showHelp() {
   console.log(`
@@ -54,11 +56,16 @@ async function main() {
   if (!(await init())) exit(1)
 
   if (argv._.at(0) === 'create') {
-    const name = argv._.at(1)?.trim()
+    let name = argv._.at(1)?.trim()
     if (!name) {
-      console.error(chalk.red('Error: please enter a name for the project'))
-      showHelp()
-      exit(1)
+      name = await input({
+        message: 'Enter project name:',
+        required: true,
+        validate: (val) => {
+          const { error } = isValidProjectName(val)
+          return error ? error : true
+        }
+      })
     }
 
     toExit(await createEmptyProject(name, {

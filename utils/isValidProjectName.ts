@@ -1,5 +1,5 @@
 export function isValidProjectName(name: string): { valid: boolean, error?: string } {
-  const minLength = 3;
+  const minLength = 1;
   const maxLength = 50;
 
   if (name.length < minLength || name.length > maxLength) {
