@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/GloryWong/proyecto/compare/v2.0.0...v2.1.0) (2025-04-05)
+
+
+### Features
+
+* prompt input for creating empty project ([7bab21e](https://github.com/GloryWong/proyecto/commit/7bab21ec27da68210e80e22cd339cdeea84e471d))
+
 ## [2.0.0](https://github.com/GloryWong/proyecto/compare/v1.3.5...v2.0.0) (2025-04-05)
 
 
