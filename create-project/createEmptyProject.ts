@@ -1,4 +1,4 @@
-import { confirm } from "../utils/confirm";
+import confirm from '@inquirer/confirm';
 import { ensureDir } from "fs-extra";
 import { initGit } from "../utils/initGit";
 import chalk from "chalk";
@@ -33,7 +33,10 @@ export async function createEmptyProject(name: string, options: Options = {}) {
     const existent = await projectExists(name)
     if (existent) return false
 
-    if (!(await confirm(`Are you sure to create an empty project called ${quote(name)}?`, 'yes'))) {
+    if (!(await confirm({
+      message: `Are you sure to create an empty project called ${quote(name)}?`,
+      default: true
+    }))) {
       return false
     }
 
@@ -45,7 +48,10 @@ export async function createEmptyProject(name: string, options: Options = {}) {
       await initGit(dir)
     }
 
-    if (open || await confirm('Do you want to open it?', 'yes')) {
+    if (open || await confirm({
+      message: 'Do you want to open it?',
+      default: true
+    })) {
       await openProjectInEditor(name)
     }
 

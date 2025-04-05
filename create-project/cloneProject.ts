@@ -4,7 +4,7 @@ import { isValidGitUrl } from "../utils/isValidGitUrl";
 import { ROOT_DIR } from "../constants";
 import { projectExists } from "../utils/projectExists";
 import { quote } from "../utils/quote";
-import { confirm } from "../utils/confirm";
+import confirm from '@inquirer/confirm';
 import { openProjectInEditor } from "../utils/openProjectInEditor";
 
 interface Options {
@@ -32,7 +32,10 @@ export async function cloneProject(url: string, options: Options = {}) {
     await $`git clone ${url}`.cwd(ROOT_DIR)
     console.log(chalk.green('Cloned project', quote(name)))
 
-    if (open || await confirm('Do you want to open it?', 'yes')) {
+    if (open || await confirm({
+      message: 'Do you want to open it?',
+      default: true
+    })) {
       await openProjectInEditor(name)
     }
 
