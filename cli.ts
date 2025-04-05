@@ -2,20 +2,20 @@
 
 import { argv as _argv } from 'bun'
 import { init } from './init'
-import { createEmptyProject } from './create-project/createEmptyProject'
+import { createEmptyProject } from './create-empty-project'
 import { exit } from 'node:process'
 import { toExit } from './utils/toExit'
 import path from 'node:path'
 import minimist from 'minimist'
 import chalk from 'chalk'
 import { CLI_NAME } from './constants'
-import { cloneProject } from './create-project/cloneProject'
+import { cloneProject } from './clone-project'
 import { readJson } from 'fs-extra'
 import type { PackageJson } from "type-fest";
 import './package.json' with { type: 'file' } // instruct `bun compile` to embed the package.json
 import input from '@inquirer/input'
 import { isValidProjectName } from './utils/isValidProjectName'
-import { deleteProject } from './delete-project/delete-project'
+import { deleteProject } from './delete-project'
 import { openProject } from './open-project'
 import { searchProject } from './utils/searchProject'
 

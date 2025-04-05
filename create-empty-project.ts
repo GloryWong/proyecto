@@ -1,12 +1,12 @@
 import confirm from '@inquirer/confirm';
 import { ensureDir } from "fs-extra";
-import { initGit } from "../utils/initGit";
+import { initGit } from "./utils/initGit";
 import chalk from "chalk";
-import { isValidProjectName } from "../utils/isValidProjectName";
-import { projectExists } from "../utils/projectExists";
-import { quote } from "../utils/quote";
-import { getProjectPath } from "../utils/getProjectPath";
-import { openProjectInEditor } from "../utils/openProjectInEditor";
+import { isValidProjectName } from "./utils/isValidProjectName";
+import { projectExists } from "./utils/projectExists";
+import { quote } from "./utils/quote";
+import { getProjectPath } from "./utils/getProjectPath";
+import { openProjectInEditor } from "./utils/openProjectInEditor";
 
 interface Options {
   /**

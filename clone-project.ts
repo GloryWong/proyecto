@@ -1,11 +1,11 @@
 import { $ } from "bun";
 import chalk from "chalk";
-import { isValidGitUrl } from "../utils/isValidGitUrl";
-import { ROOT_DIR } from "../constants";
-import { projectExists } from "../utils/projectExists";
-import { quote } from "../utils/quote";
+import { isValidGitUrl } from "./utils/isValidGitUrl";
+import { ROOT_DIR } from "./constants";
+import { projectExists } from "./utils/projectExists";
+import { quote } from "./utils/quote";
 import confirm from '@inquirer/confirm';
-import { openProjectInEditor } from "../utils/openProjectInEditor";
+import { openProjectInEditor } from "./utils/openProjectInEditor";
 
 interface Options {
   /**

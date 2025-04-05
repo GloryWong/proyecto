@@ -1,10 +1,10 @@
-import { getProjectPath } from "../utils/getProjectPath";
+import { getProjectPath } from "./utils/getProjectPath";
 import trash from "trash";
-import { searchProject } from "../utils/searchProject";
+import { searchProject } from "./utils/searchProject";
 import chalk from "chalk";
-import { quote } from "../utils/quote";
+import { quote } from "./utils/quote";
 import confirm from "@inquirer/confirm";
-import { projectExists } from "../utils/projectExists";
+import { projectExists } from "./utils/projectExists";
 
 async function moveToTrash(name: string) {
   if (await confirm({
