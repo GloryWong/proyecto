@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.2.0](https://github.com/GloryWong/proyecto/compare/v2.1.0...v2.2.0) (2025-04-05)
+
+
+### Features
+
+* support delete projects ([35cb91a](https://github.com/GloryWong/proyecto/commit/35cb91a431c0a04cf695effaa39bae427a2bfce7))
+* support open project directly ([bc4de70](https://github.com/GloryWong/proyecto/commit/bc4de708b7bb6cf33a90fe5db3e8e90c84a4ef72))
+
 ## [2.1.0](https://github.com/GloryWong/proyecto/compare/v2.0.0...v2.1.0) (2025-04-05)
 
 
