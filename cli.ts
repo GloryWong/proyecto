@@ -20,28 +20,30 @@ import { openProject } from './open-project'
 import { searchProject } from './utils/searchProject'
 
 function showHelp() {
-  console.log(`Proyecto - A local project manager.
+  console.log(`Proyecto - A Local Project Manager
 
-Proyecto simply manages your project directories, and does not intervene in their contents.
-The editor used to open projects is auto-detected via environments $EDITOR or $VISUAL or $TERM_PROGRAM,
-if none of them is set, the system default editor is used.
-You are prompt to select a project to open in editor if no valid command and option is used.
+Proyecto helps you manage your project directories effortlessly without interfering with their contents.
+
+When open a project, it automatically detects the editor to use via the \`$EDITOR\`, \`$VISUAL\`, or \`$TERM_PROGRAM\` environment variables.  
+If none of these are set, the system's default editor will be used.
+
+If no valid command or option is provided, you will be prompted to select a project to open in your editor.
 
 ${chalk.bold('Usage')}:
   ${CLI_NAME} [command] [options]
 
 ${chalk.bold('Options')}:
   -h, --help                Show this help message
-  -v, --version             Show version
+  -v, --version             Show the current version
 
 ${chalk.bold('Commands')}:
-  open   <name>             Open a project in editor
-  create <name>             Create an empty project
-    -o, --open              Open project in editor after created
-        --no-git            Skip git initialization
-  clone <url>               Clone a git repository to create a project (Only support GitHub web URL)
-    -o, --open              Open project in editor after cloned
-  delete <name>             Delete a project`)
+  open   <name>             Open an existing project in the editor
+  create <name>             Create a new, empty project
+    -o, --open              Automatically open the project in the editor after creation
+        --no-git            Skip Git repository initialization
+  clone <url>               Clone a GitHub repository to create a new project (Only GitHub web URLs are supported)
+    -o, --open              Automatically open the project in the editor after cloning
+  delete <name>             Delete an existing project`)
 }
 
 async function showVersion() {

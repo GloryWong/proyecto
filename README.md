@@ -41,21 +41,30 @@ proyecto --help
 Help output:
 
 ```
-Proyecto - A local project manager
+Proyecto - A Local Project Manager
 
-Usage: proyecto [command] [options]
+Proyecto helps you manage your project directories effortlessly without interfering with their contents.
+
+When open a project, it automatically detects the editor to use via the `$EDITOR`, `$VISUAL`, or `$TERM_PROGRAM` environment variables.  
+If none of these are set, the system's default editor will be used.
+
+If no valid command or option is provided, you will be prompted to select a project to open in your editor.
+
+Usage:
+  proyecto [command] [options]
 
 Options:
-  --help, -h                Show this help message
-  --version, -v             Show version
+  -h, --help                Show this help message
+  -v, --version             Show the current version
 
 Commands:
-  create <name>             Create an empty project
-    --open, -o              Open project in editor after created
-    --no-git                Do not initialize with git
-  clone <url>               Clone a git repository to create a project (Only support GitHub web URL)
-    --open, -o              Open project in editor after cloned
-  search                    Search for a project to open
+  open   <name>             Open an existing project in the editor
+  create <name>             Create a new, empty project
+    -o, --open              Automatically open the project in the editor after creation
+        --no-git            Skip Git repository initialization
+  clone <url>               Clone a GitHub repository to create a new project (Only GitHub web URLs are supported)
+    -o, --open              Automatically open the project in the editor after cloning
+  delete <name>             Delete an existing project
 ```
 
 ## Contributing
