@@ -10,33 +10,38 @@ import minimist from 'minimist'
 import chalk from 'chalk'
 import { CLI_NAME } from './constants'
 import { cloneProject } from './create-project/cloneProject'
-import { searchProject } from './search-project/search-project'
 import { readJson } from 'fs-extra'
 import type { PackageJson } from "type-fest";
 import './package.json' with { type: 'file' } // instruct `bun compile` to embed the package.json
 import input from '@inquirer/input'
 import { isValidProjectName } from './utils/isValidProjectName'
 import { deleteProject } from './delete-project/delete-project'
+import { openProject } from './open-project'
+import { searchProject } from './utils/searchProject'
 
 function showHelp() {
-  console.log(`
-Proyecto - A local project manager
+  console.log(`Proyecto - A local project manager.
 
-Usage: ${CLI_NAME} [command] [options]
+Proyecto simply manages your project directories, and does not intervene in their contents.
+The editor used to open projects is auto-detected via environments $EDITOR or $VISUAL or $TERM_PROGRAM,
+if none of them is set, the system default editor is used.
+You are prompt to select a project to open in editor if no valid command and option is used.
 
-Options:
-  --help, -h                Show this help message
-  --version, -v             Show version
+${chalk.bold('Usage')}:
+  ${CLI_NAME} [command] [options]
 
-Commands:
-  search                    Search for an existing project to open
+${chalk.bold('Options')}:
+  -h, --help                Show this help message
+  -v, --version             Show version
+
+${chalk.bold('Commands')}:
+  open   <name>             Open a project in editor
   create <name>             Create an empty project
-    --open, -o              Open project in editor after created
-    --no-git                Do not initialize with git
+    -o, --open              Open project in editor after created
+        --no-git            Skip git initialization
   clone <url>               Clone a git repository to create a project (Only support GitHub web URL)
-    --open, -o              Open project in editor after cloned
-  delete <name>             Delete an existing project
-`)
+    -o, --open              Open project in editor after cloned
+  delete <name>             Delete a project`)
 }
 
 async function showVersion() {
@@ -56,6 +61,11 @@ async function main() {
   })
 
   if (!(await init())) exit(1)
+
+  if (argv._.at(0) === 'open') {
+    const name = argv._.at(1)?.trim()
+    toExit(await openProject(name))
+  }
 
   if (argv._.at(0) === 'create') {
     let name = argv._.at(1)?.trim()
@@ -89,10 +99,6 @@ async function main() {
     }))
   }
 
-  if (argv._.at(0) === 'search') {
-    toExit(await searchProject())
-  }
-
   if (argv._.at(0) === 'delete') {
     const name = argv._.at(1)?.trim()
     toExit(await deleteProject(name))
@@ -109,7 +115,7 @@ async function main() {
   }
 
   // Anything else
-  await searchProject()
+  await searchProject('Select a project to open:', true)
 }
 
 main()
