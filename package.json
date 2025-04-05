@@ -24,7 +24,7 @@
     "access": "public"
   },
   "bin": {
-    "pro": "./cli.ts"
+    "proyecto": "./cli.ts"
   },
   "repository": "https://github.com/GloryWong/proyecto",
   "scripts": {

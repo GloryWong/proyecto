@@ -3,7 +3,7 @@ import os, { tmpdir } from "node:os";
 
 // Names
 export const APP_NAME = 'proyecto-cli'
-export const CLI_NAME = 'pro'
+export const CLI_NAME = 'proyecto'
 export const ROOT_NAME = 'Projects'
 
 // Directory paths

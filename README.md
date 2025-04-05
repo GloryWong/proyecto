@@ -4,7 +4,25 @@ Proyecto is a lightweight CLI tool for managing local projects.
 
 ## Install
 
-Proyecto relies on the Bun runtime. Please ensure that you have [Bun installed](https://bun.sh/docs/installation) before proceeding.
+### Homebrew
+
+Install with [Homebrew CLI](https://brew.sh/):
+
+```bash
+brew tap GloryWong/homebrew-tap
+brew install proyecto
+```
+
+Update:
+
+```bash
+brew update
+brew upgrade proyecto
+```
+
+### NPM
+
+NPM package proyecto relies on the Bun runtime. Please ensure that you have [Bun installed](https://bun.sh/docs/installation) before proceeding.
 
 Install Proyecto globally using Bun:
 
@@ -17,7 +35,7 @@ bun add -g proyecto-cli
 To get started, run:
 
 ```bash
-pro --help
+proyecto --help
 ```
 
 Help output:
@@ -25,7 +43,7 @@ Help output:
 ```
 Proyecto - A local project manager
 
-Usage: pro [command] [options]
+Usage: proyecto [command] [options]
 
 Options:
   --help, -h                Show this help message
