@@ -16,6 +16,7 @@ import type { PackageJson } from "type-fest";
 import './package.json' with { type: 'file' } // instruct `bun compile` to embed the package.json
 import input from '@inquirer/input'
 import { isValidProjectName } from './utils/isValidProjectName'
+import { deleteProject } from './delete-project/delete-project'
 
 function showHelp() {
   console.log(`
@@ -28,12 +29,13 @@ Options:
   --version, -v             Show version
 
 Commands:
+  search                    Search for an existing project to open
   create <name>             Create an empty project
     --open, -o              Open project in editor after created
     --no-git                Do not initialize with git
   clone <url>               Clone a git repository to create a project (Only support GitHub web URL)
     --open, -o              Open project in editor after cloned
-  search                    Search for a project to open
+  delete <name>             Delete an existing project
 `)
 }
 
@@ -45,7 +47,7 @@ async function showVersion() {
 async function main() {
   const argv = minimist(_argv.slice(2), {
     boolean: ['help', 'version', 'git'],
-    string: ['create', 'clone', 'search'],
+    string: ['create', 'clone', 'search', 'delete'],
     alias: {
       h: 'help',
       v: 'version',
@@ -89,6 +91,11 @@ async function main() {
 
   if (argv._.at(0) === 'search') {
     toExit(await searchProject())
+  }
+
+  if (argv._.at(0) === 'delete') {
+    const name = argv._.at(1)?.trim()
+    toExit(await deleteProject(name))
   }
 
   if (argv['version']) {
