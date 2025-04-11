@@ -32,7 +32,7 @@ it('should return false if the project name extracted from url already exists', 
   expect(result).toBeFalse()
 })
 
-it('should clone git repo to the root dir, print log and return true', async () => {
+it('should clone git repo, print log and return true', async () => {
   const { consoleLogSpy } = mockConsole()
   await mockModule('@inquirer/confirm', () => ({
     default: mock(),
@@ -47,6 +47,26 @@ it('should clone git repo to the root dir, print log and return true', async () 
   }))
 
   const result = await cloneProject('https://github.com/sample/test.git')
+
+  expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringMatching(/test/))
+  expect(result).toBeTrue()
+})
+
+it('should clone git repo with url of `userName/repoName`, print log and return true', async () => {
+  const { consoleLogSpy } = mockConsole()
+  await mockModule('@inquirer/confirm', () => ({
+    default: mock(),
+  }))
+  await mockModule('./utils/openProjectInEditor.js', () => ({
+    openProjectInEditor: mock(),
+  }))
+  mockBuiltin('$').mockImplementation(() => ({
+    // eslint-disable-next-line ts/ban-ts-comment
+    // @ts-ignore
+    cwd: () => '',
+  }))
+
+  const result = await cloneProject('sample/test')
 
   expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringMatching(/test/))
   expect(result).toBeTrue()

@@ -1,3 +1,5 @@
+import { GITHUB_URL_PREFIX } from '../constants'
+
 export function isValidGitUrl(url: string) {
-  return /^https:\/\/github\.com\/[^/\s]+\/[^/\s]+\.git$/.test(url)
+  return new RegExp(`^${GITHUB_URL_PREFIX}[^/\\s]+\\/[^/\\s]+\\.git$`).test(url)
 }

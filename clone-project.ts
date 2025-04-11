@@ -1,6 +1,6 @@
 import confirm from '@inquirer/confirm'
 import chalk from 'chalk'
-import { ROOT_DIR } from './constants.js'
+import { GITHUB_URL_PREFIX, ROOT_DIR } from './constants.js'
 import { isValidGitUrl } from './utils/isValidGitUrl.js'
 import { openProjectInEditor } from './utils/openProjectInEditor.js'
 import { projectExists } from './utils/projectExists.js'
@@ -18,8 +18,12 @@ export async function cloneProject(url: string, options: Options = {}) {
   try {
     const { open = false } = options
 
+    if (!url.startsWith(GITHUB_URL_PREFIX) && url.split('/').length === 2) {
+      url = `${GITHUB_URL_PREFIX}${url}.git`
+    }
+
     if (!isValidGitUrl(url)) {
-      throw new Error('Invalid GitHub web URL.')
+      throw new Error(`Invalid GitHub web URL: ${url}`)
     }
 
     const name = (/([^/]+)\.git$/.exec(url))?.[1]
