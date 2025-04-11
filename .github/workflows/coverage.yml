@@ -26,3 +26,5 @@ jobs:
         run: bun coverage
 
       - uses: kefasjw/lcov-pull-request-report@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
