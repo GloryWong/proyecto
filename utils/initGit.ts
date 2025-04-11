@@ -1,9 +1,7 @@
-import { $, which } from 'bun'
-
 export async function initGit(dir: string) {
   try {
-    if (which('git')) {
-      await $`git init --quiet`.cwd(dir)
+    if (Bun.which('git')) {
+      await Bun.$`git init --quiet`.cwd(dir)
       console.log('Git initialzed')
     }
     else {
@@ -12,7 +10,7 @@ export async function initGit(dir: string) {
 
     return true
   }
-  catch (error) {
+  catch (error: any) {
     console.error('Error: failed to initialzed with git.', error)
     return false
   }

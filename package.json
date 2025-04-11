@@ -39,7 +39,8 @@
     "compile": "bun build --compile --minify --asset-naming='[name].[ext]' --outfile=dist/proyecto cli.ts",
     "prepare": "simple-git-hooks",
     "lint": "eslint",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix",
+    "coverage": "bun test --coverage"
   },
   "peerDependencies": {
     "typescript": "^5"
@@ -63,11 +64,9 @@
     "@types/bun": "latest",
     "@types/fs-extra": "^11.0.4",
     "@types/minimist": "^1.2.5",
-    "@types/mock-fs": "^4.13.4",
     "@types/node": "^22.13.17",
     "eslint": "^9.24.0",
     "lint-staged": "^15.5.0",
-    "mock-fs": "^5.5.0",
     "simple-git-hooks": "^2.12.1",
     "type-fest": "^4.39.1"
   },

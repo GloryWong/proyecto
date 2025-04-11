@@ -1,0 +1,7 @@
+[test]
+preload = [ "./tests/__setup__.ts" ]
+coverageReporter = [
+  "text",
+  "lcov"
+]
+smol = true
