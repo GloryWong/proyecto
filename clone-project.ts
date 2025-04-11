@@ -34,7 +34,7 @@ export async function cloneProject(url: string, options: Options = {}) {
       return false
     }
 
-    await Bun.$`git clone ${url}`.cwd(ROOT_DIR)
+    await Bun.$`git clone ${url} --progress`.cwd(ROOT_DIR)
     console.log(chalk.green('Cloned project', quote(name)))
 
     if (open || await confirm({
