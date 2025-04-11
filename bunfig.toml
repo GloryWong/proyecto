@@ -5,3 +5,6 @@ coverageReporter = [
   "lcov"
 ]
 smol = true
+
+[test.reporter]
+junit = "coverage/junit.xml"
