@@ -25,6 +25,4 @@ jobs:
       - name: coverage
         run: bun coverage
 
-      - uses: vebr/jest-lcov-reporter@v0.2.0
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: kefasjw/lcov-pull-request-report@v1
