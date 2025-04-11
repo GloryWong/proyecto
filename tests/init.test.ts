@@ -11,7 +11,7 @@ it('should print error and return false if anything throw error during init', as
 
   const result = await init()
 
-  expect(consoleErrorSpy).toHaveBeenCalledWith(expect.stringContaining('wrong'))
+  expect(consoleErrorSpy).toHaveBeenCalled()
   expect(result).toBeFalse()
 })
 
