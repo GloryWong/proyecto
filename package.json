@@ -1,7 +1,7 @@
 {
   "name": "proyecto-cli",
   "type": "module",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Proyecto is a lightweight CLI tool for managing local projects",
   "author": {
     "name": "Glory Wong",
