@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.3.0](https://github.com/GloryWong/proyecto/compare/v2.2.2...v2.3.0) (2025-04-11)
+
+
+### Features
+
+* **clone project:** support enter direct `user-name/repo-name` ([760a787](https://github.com/GloryWong/proyecto/commit/760a7876d3a1e955471407790de6ca7823935e6b))
+* **main/clone:** prompt to input if argv[1] is empty ([e481938](https://github.com/GloryWong/proyecto/commit/e481938f201bf0c3d7f717b3973d3b663fe832de))
+
+
+### Bug Fixes
+
+* **clone:** show git clone progress ([8e4bef3](https://github.com/GloryWong/proyecto/commit/8e4bef336c9dd2c64af88288fcfe95f650448ee7))
+
 ## [2.2.2](https://github.com/GloryWong/proyecto/compare/v2.2.1...v2.2.2) (2025-04-11)
 
 
