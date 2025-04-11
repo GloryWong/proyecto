@@ -1,12 +1,13 @@
 import input from '@inquirer/input'
-import chalk from 'chalk'
 import minimist from 'minimist'
 import { cloneProject } from './clone-project.js'
 import { createEmptyProject } from './create-empty-project.js'
 import { deleteProject } from './delete-project.js'
 import { init } from './init.js'
 import { openProject } from './open-project.js'
+import { isValidGitUrl } from './utils/isValidGitUrl.js'
 import { isValidProjectName } from './utils/isValidProjectName.js'
+import { normalizeGitUrl } from './utils/normalizeGitUrl.js'
 import { searchProject } from './utils/searchProject.js'
 import { showHelp } from './utils/showHelp.js'
 import { showVersion } from './utils/showVersion.js'
@@ -54,12 +55,16 @@ export async function main(_argv: string[]) {
   }
 
   if (argv._.at(0) === 'clone') {
-    const url = argv._.at(1)?.trim()
-    if (!url) {
-      console.error(chalk.red('Error: please enter the git repository url'))
-      showHelp()
-      return false
-    }
+    let url = argv._.at(1)?.trim()
+    url ||= await input({
+      message: 'Enter GitHub web URL or user/repo:',
+      required: true,
+      validate(value) {
+        const url = normalizeGitUrl(value)
+        const valid = isValidGitUrl(url)
+        return valid ? true : `Invalid GitHub we URL: ${url}`
+      },
+    })
 
     return cloneProject(url, {
       open: argv.open,

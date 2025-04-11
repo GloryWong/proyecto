@@ -1,7 +1,6 @@
 import type { Mock } from 'bun:test'
 import { afterEach, beforeAll, beforeEach, describe, expect, it, mock } from 'bun:test'
 import { main } from '../main'
-import { mockConsole } from './__helpers__/mock-console'
 import { mockModule } from './__helpers__/mock-module'
 
 it('should return false if failed to init', async () => {
@@ -118,6 +117,7 @@ describe('Create', () => {
 describe('Clone', () => {
   const testURL = 'https://github.com/a/b/c.git'
   let mockCloneProject: Mock<any>
+  let mockInput: Mock<any>
 
   beforeAll(async () => {
     await mockModule('./init.js', () => ({
@@ -130,10 +130,15 @@ describe('Clone', () => {
     await mockModule('./clone-project.js', () => ({
       cloneProject: mockCloneProject,
     }))
+    mockInput = mock()
+    await mockModule('@inquirer/input', () => ({
+      default: mockInput,
+    }))
   })
 
   afterEach(() => {
     mockCloneProject.mockRestore()
+    mockInput.mockRestore()
   })
 
   it('should execute cloning project if argv[0] is `clone`', async () => {
@@ -142,19 +147,10 @@ describe('Clone', () => {
     expect(mockCloneProject).toHaveBeenCalled()
   })
 
-  it('should print error, show help and return false if argv[1] is empty', async () => {
-    const { consoleErrorSpy } = mockConsole()
-    const mockShowHelp = mock()
-    await mockModule('./utils/showHelp.js', () => ({
-      showHelp: mockShowHelp,
-    }))
+  it('should prompt to enter url if argv[1] is empty', async () => {
+    await main(['clone'])
 
-    const result = await main(['clone'])
-
-    expect(consoleErrorSpy).toHaveBeenCalledWith(expect.stringMatching(/git/))
-    expect(mockShowHelp).toHaveBeenCalled()
-    expect(result).toBeFalse()
-    expect(mockCloneProject).not.toHaveBeenCalledWith()
+    expect(mockInput).toHaveBeenCalled()
   })
 
   it('should use argv[1] as the url if it is not empty', async () => {
