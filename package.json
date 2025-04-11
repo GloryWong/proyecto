@@ -37,7 +37,7 @@
   "scripts": {
     "cli": "NODE_ENV=development bun cli.ts",
     "compile": "bun build --compile --minify --asset-naming='[name].[ext]' --outfile=dist/proyecto cli.ts",
-    "prepare": "simple-git-hooks",
+    "prepare": "bun simple-git-hooks",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "coverage": "bun test --coverage"
