@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.1](https://github.com/GloryWong/proyecto/compare/v2.2.0...v2.2.1) (2025-04-11)
+
+
+### Bug Fixes
+
+* add tests and refactor some modules ([6b7a83e](https://github.com/GloryWong/proyecto/commit/6b7a83e41359803f704d15a160e9f2b7a5c3d3a7))
+
 ## [2.2.0](https://github.com/GloryWong/proyecto/compare/v2.1.0...v2.2.0) (2025-04-05)
 
 
