@@ -6,7 +6,7 @@ import { mockModule } from './__helpers__/mock-module'
 it('should print error and return false if anything throw error during init', async () => {
   const { consoleErrorSpy } = mockConsole()
   await mockModule('fs-extra', () => ({
-    ensureDir: () => { throw new Error('wrong') },
+    ensureDir: mock().mockRejectedValue('wrong'),
   }))
 
   const result = await init()

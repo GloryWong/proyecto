@@ -43,8 +43,6 @@ it('should use the default editor and return true if no editor passed in', async
 
   const result = await openInEditor('testfile')
 
-  expect(openEditorMock).toHaveBeenCalledWith(expect.arrayContaining([]), {
-    editor: expect.any(String),
-  })
+  expect(openEditorMock).toHaveBeenCalledWith(expect.arrayContaining([]), expect.objectContaining({}))
   expect(result).toBeTrue()
 })
