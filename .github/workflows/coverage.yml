@@ -25,7 +25,6 @@ jobs:
       - name: coverage
         run: bun coverage
 
-      - uses: ArtiomTr/jest-coverage-report-action@v2
+      - uses: vebr/jest-lcov-reporter@v0.2.0
         with:
-          package-manager: bun
-          test-script: bun test
+          github-token: ${{ secrets.GITHUB_TOKEN }}
