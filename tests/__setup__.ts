@@ -2,7 +2,7 @@ import path from 'node:path'
 import { chdir, cwd } from 'node:process'
 import { afterEach, beforeEach, mock } from 'bun:test'
 import { ensureDir, remove } from 'fs-extra'
-import * as constants from '../constants'
+import { ROOT_NAME } from '../constants'
 import { clearAllModuleMocks, mockModule } from './__helpers__/mock-module'
 import { TEST_DIR } from './__helpers__/test-dir-path'
 
@@ -13,7 +13,15 @@ beforeEach(async () => {
   chdir(TEST_DIR)
 
   await mockModule('./constants', () => ({
-    ROOT_DIR: path.join(TEST_DIR, constants.ROOT_NAME),
+    ROOT_DIR: path.join(TEST_DIR, ROOT_NAME),
+  }))
+
+  await mockModule('./utils/getEnvPaths.js', () => ({
+    getEnvPaths: () => ({
+      tmp: path.join(TEST_DIR, 'tmp'),
+      data: path.join(TEST_DIR, 'data'),
+      backups: path.join(TEST_DIR, 'data', 'backups'),
+    }),
   }))
 })
 

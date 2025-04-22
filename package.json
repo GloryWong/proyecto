@@ -51,8 +51,10 @@
     "@inquirer/search": "^3.0.12",
     "chalk": "^5.4.1",
     "conf": "^13.1.0",
+    "env-paths": "^3.0.0",
     "fs-extra": "^11.3.0",
     "fuzzysort": "^3.1.0",
+    "iso-timestamp": "^1.2.0",
     "minimist": "^1.2.8",
     "open-editor": "^5.1.0",
     "trash": "^9.0.0"

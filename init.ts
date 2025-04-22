@@ -1,11 +1,15 @@
 import chalk from 'chalk'
 import { ensureDir } from 'fs-extra'
-import { ROOT_DIR, TMP_DIR } from './constants.js'
+import { ROOT_DIR } from './constants.js'
+import { getEnvPaths } from './utils/getEnvPaths.js'
 
 export async function init() {
   try {
-    await ensureDir(TMP_DIR)
     await ensureDir(ROOT_DIR)
+    const paths = getEnvPaths()
+    for (const path of Object.values(paths)) {
+      await ensureDir(path)
+    }
     return true
   }
   catch (error) {

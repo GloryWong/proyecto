@@ -9,8 +9,10 @@
         "@inquirer/search": "^3.0.12",
         "chalk": "^5.4.1",
         "conf": "^13.1.0",
+        "env-paths": "^3.0.0",
         "fs-extra": "^11.3.0",
         "fuzzysort": "^3.1.0",
+        "iso-timestamp": "^1.2.0",
         "minimist": "^1.2.8",
         "open-editor": "^5.1.0",
         "trash": "^9.0.0",
@@ -717,6 +719,8 @@
     "is-wsl": ["is-wsl@3.1.0", "https://registry.npmmirror.com/is-wsl/-/is-wsl-3.1.0.tgz", { "dependencies": { "is-inside-container": "^1.0.0" } }, "sha512-UcVfVfaK4Sc4m7X3dUSoHoozQGBEFeDC+zVo06t98xe8CzHSZZBekNXH+tu0NalHolcJ/QAGqS46Hef7QXBIMw=="],
 
     "isexe": ["isexe@2.0.0", "https://registry.npmmirror.com/isexe/-/isexe-2.0.0.tgz", {}, "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw=="],
+
+    "iso-timestamp": ["iso-timestamp@1.2.0", "", {}, "sha512-xgpwQArBHkpI2X5fa6jHPMd8/S+pYBgOO/TdHDaK7MxLSCuHCtg9R9tDbgiFuNKnUz3I54km4GKn5fYAbLFC5g=="],
 
     "jiti": ["jiti@2.4.2", "", { "bin": { "jiti": "lib/jiti-cli.mjs" } }, "sha512-rg9zJN+G4n2nfJl5MW3BMygZX56zKPNVEYYqq7adpmMh4Jn2QNEwhvQlFy6jPVdcod7txZtKHWnyZiA3a0zP7A=="],
 

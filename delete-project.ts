@@ -1,20 +1,8 @@
-import confirm from '@inquirer/confirm'
 import chalk from 'chalk'
-import trash from 'trash'
-import { getProjectPath } from './utils/getProjectPath.js'
+import { moveToTrash } from './utils/moveToTrash.js'
 import { projectExists } from './utils/projectExists.js'
 import { quote } from './utils/quote.js'
 import { searchProject } from './utils/searchProject.js'
-
-async function moveToTrash(name: string) {
-  if (await confirm({
-    message: `Are you sure to delete ${quote(name)}?`,
-    default: false,
-  })) {
-    await trash(getProjectPath(name))
-    console.log('Deleted! Project', quote(name), 'was successfully moved to your system trash.')
-  }
-}
 
 export async function deleteProject(name?: string) {
   try {
