@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/GloryWong/proyecto/compare/v2.3.0...v2.3.1) (2025-04-22)
+
+
+### Bug Fixes
+
+* **delete project:** move to trash using different methods ([3ac7cc8](https://github.com/GloryWong/proyecto/commit/3ac7cc8ac91a74a686d16fea601c6541bade93ac))
+
 ## [2.3.0](https://github.com/GloryWong/proyecto/compare/v2.2.2...v2.3.0) (2025-04-11)
 
 
