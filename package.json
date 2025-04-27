@@ -66,11 +66,11 @@
     "@types/bun": "latest",
     "@types/fs-extra": "^11.0.4",
     "@types/minimist": "^1.2.5",
-    "@types/node": "^22.14.1",
-    "eslint": "^9.25.0",
+    "@types/node": "^22.15.2",
+    "eslint": "^9.25.1",
     "lint-staged": "^15.5.1",
-    "simple-git-hooks": "^2.12.1",
-    "type-fest": "^4.40.0"
+    "simple-git-hooks": "^2.13.0",
+    "type-fest": "^4.40.1"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged",
