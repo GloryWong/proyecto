@@ -11,3 +11,4 @@ export const ROOT_DIR = Bun.env.NODE_ENV === 'development' ? path.join(tmpdir(),
 
 // Others
 export const GITHUB_URL_PREFIX = 'https://github.com/'
+export const VSCODE_WORKSPACE_SUFFIX = '.code-workspace'

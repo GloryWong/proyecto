@@ -12,8 +12,10 @@ it('should list all valid projects', async () => {
   await createTestProjects(['.test', '_test', 'test test', '@test'])
   // create a file
   await writeFile(path.join(ROOT_DIR, 'sample-file'), '')
+  // create a vscode workspace file
+  await writeFile(path.join(ROOT_DIR, 'sample.code-workspace'), '')
 
   const names = await listProjects()
 
-  expect(names.sort()).toEqual(projectNames.sort())
+  expect(names.sort()).toEqual([...projectNames, 'sample.code-workspace'].sort())
 })
