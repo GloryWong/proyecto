@@ -52,7 +52,7 @@ export async function createEmptyProject(name: string, options: Options = {}) {
 
     if (open || await confirm({
       message: 'Do you want to open it?',
-      default: true,
+      default: false,
     })) {
       await openProjectInEditor(name)
     }

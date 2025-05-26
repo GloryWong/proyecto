@@ -98,9 +98,9 @@ it('should not init with git after project is created if passed option `git` is 
   expect(mockInitGit).not.toHaveBeenCalled()
 })
 
-it('should prompt to open project in editor (with default true) by default', async () => {
+it('should prompt to open project in editor (with default false) by default', async () => {
   mockConsole()
-  const mockConfirm = mock()
+  const mockConfirm = mock(() => true)
   await mockModule('@inquirer/confirm', () => ({
     default: mockConfirm,
   }))
@@ -113,8 +113,8 @@ it('should prompt to open project in editor (with default true) by default', asy
 
   await createEmptyProject('test')
 
-  expect(mockConfirm).toHaveBeenCalledWith(expect.objectContaining({
-    default: true,
+  expect(mockConfirm).toHaveBeenLastCalledWith(expect.objectContaining({
+    default: false,
   }))
 })
 

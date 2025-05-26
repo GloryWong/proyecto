@@ -72,7 +72,7 @@ it('should clone git repo with url of `userName/repoName`, print log and return 
   expect(result).toBeTrue()
 })
 
-it('should prompt to open project in editor with default true if the option `open` is false by default', async () => {
+it('should prompt to open project in editor with default false if the option `open` is false by default', async () => {
   mockConsole()
   const mockConfirm = mock()
   await mockModule('@inquirer/confirm', () => ({
@@ -89,7 +89,7 @@ it('should prompt to open project in editor with default true if the option `ope
 
   await cloneProject('https://github.com/sample/test.git')
   expect(mockConfirm).toHaveBeenCalledWith(expect.objectContaining({
-    default: true,
+    default: false,
   }))
 })
 

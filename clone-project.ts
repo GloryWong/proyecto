@@ -39,7 +39,7 @@ export async function cloneProject(url: string, options: Options = {}) {
 
     if (open || await confirm({
       message: 'Do you want to open it?',
-      default: true,
+      default: false,
     })) {
       await openProjectInEditor(name)
     }
