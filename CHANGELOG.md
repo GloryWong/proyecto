@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.4.0](https://github.com/GloryWong/proyecto/compare/v2.3.1...v2.4.0) (2025-05-26)
+
+
+### Features
+
+* support listing opening vscode workspaces ([aab290d](https://github.com/GloryWong/proyecto/commit/aab290da370aa5eb045f3c8ba8f37b54aaede979))
+
+
+### Bug Fixes
+
+* confirm to open project with default false for create empty project and clone project ([393fff0](https://github.com/GloryWong/proyecto/commit/393fff048fa7f16ee2df376173aac1fc9a20d3e3))
+* **deps:** update all non-major dependencies ([#23](https://github.com/GloryWong/proyecto/issues/23)) ([6c2191f](https://github.com/GloryWong/proyecto/commit/6c2191fdcf695926da1c5a2f6efd7115c65225ec))
+* **deps:** update all non-major dependencies ([#27](https://github.com/GloryWong/proyecto/issues/27)) ([e82f04e](https://github.com/GloryWong/proyecto/commit/e82f04e9a817b0c2ba7ef6f15c6871ada61c2935))
+
 ## [2.3.1](https://github.com/GloryWong/proyecto/compare/v2.3.0...v2.3.1) (2025-04-22)
 
 
