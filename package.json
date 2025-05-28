@@ -73,10 +73,10 @@
     "type-fest": "^4.41.0"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged",
-    "commit-msg": "pnpm commitlint --edit ${1}"
+    "pre-commit": "bun lint-staged",
+    "commit-msg": "bun commitlint --edit ${1}"
   },
   "lint-staged": {
-    "*": "pnpm lint:fix"
+    "*": "bun lint:fix"
   }
 }
