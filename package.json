@@ -46,9 +46,9 @@
     "typescript": "^5"
   },
   "dependencies": {
-    "@inquirer/confirm": "^5.1.11",
-    "@inquirer/input": "^4.1.11",
-    "@inquirer/search": "^3.0.14",
+    "@inquirer/confirm": "^5.1.12",
+    "@inquirer/input": "^4.1.12",
+    "@inquirer/search": "^3.0.15",
     "chalk": "^5.4.1",
     "conf": "^13.1.0",
     "env-paths": "^3.0.0",
@@ -66,9 +66,9 @@
     "@types/bun": "latest",
     "@types/fs-extra": "^11.0.4",
     "@types/minimist": "^1.2.5",
-    "@types/node": "^22.15.21",
+    "@types/node": "^22.15.23",
     "eslint": "^9.27.0",
-    "lint-staged": "^16.0.0",
+    "lint-staged": "^16.1.0",
     "simple-git-hooks": "^2.13.0",
     "type-fest": "^4.41.0"
   },
