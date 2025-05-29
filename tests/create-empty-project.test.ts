@@ -10,7 +10,7 @@ import { mockModule } from './__helpers__/mock-module'
 it('should print error and return false if the given name is not a valid project name', async () => {
   const { consoleErrorSpy } = mockConsole()
   await mockModule('@inquirer/confirm', () => ({
-    default: mock(),
+    default: mock(async () => undefined),
   }))
 
   const result = await createEmptyProject('@invalid-project-name')
@@ -31,7 +31,7 @@ it('should return false if the given project name already exists', async () => {
 })
 
 it('should prompt to confirm (with default true) creating a project with the given name', async () => {
-  const mockConfirm = mock(() => false)
+  const mockConfirm = mock(async () => false)
   await mockModule('@inquirer/confirm', () => ({
     default: mockConfirm,
   }))
@@ -47,7 +47,7 @@ it('should prompt to confirm (with default true) creating a project with the giv
 it('should create project and return true if confirmed', async () => {
   mockConsole()
   await mockModule('@inquirer/confirm', () => ({
-    default: mock(() => true),
+    default: mock(async () => true),
   }))
   await mockModule('./utils/initGit.js', () => ({
     initGit: mock(),
@@ -65,7 +65,7 @@ it('should create project and return true if confirmed', async () => {
 it('should init with git by default after project is created', async () => {
   mockConsole()
   await mockModule('@inquirer/confirm', () => ({
-    default: mock(() => true),
+    default: mock(async () => true),
   }))
   const mockInitGit = mock()
   await mockModule('./utils/initGit.js', () => ({
@@ -83,7 +83,7 @@ it('should init with git by default after project is created', async () => {
 it('should not init with git after project is created if passed option `git` is false', async () => {
   mockConsole()
   await mockModule('@inquirer/confirm', () => ({
-    default: mock(() => true),
+    default: mock(async () => true),
   }))
   const mockInitGit = mock()
   await mockModule('./utils/initGit.js', () => ({
@@ -100,7 +100,7 @@ it('should not init with git after project is created if passed option `git` is 
 
 it('should prompt to open project in editor (with default false) by default', async () => {
   mockConsole()
-  const mockConfirm = mock(() => true)
+  const mockConfirm = mock(async () => true)
   await mockModule('@inquirer/confirm', () => ({
     default: mockConfirm,
   }))
@@ -121,7 +121,7 @@ it('should prompt to open project in editor (with default false) by default', as
 it('should open project in editor if passed option `open` is true', async () => {
   mockConsole()
   await mockModule('@inquirer/confirm', () => ({
-    default: mock(() => true),
+    default: mock(async () => true),
   }))
   await mockModule('./utils/initGit.js', () => ({
     initGit: mock(),

@@ -35,7 +35,7 @@ it('should return false if the project name extracted from url already exists', 
 it('should clone git repo, print log and return true', async () => {
   const { consoleLogSpy } = mockConsole()
   await mockModule('@inquirer/confirm', () => ({
-    default: mock(),
+    default: mock(async () => undefined),
   }))
   await mockModule('./utils/openProjectInEditor.js', () => ({
     openProjectInEditor: mock(),
@@ -55,7 +55,7 @@ it('should clone git repo, print log and return true', async () => {
 it('should clone git repo with url of `userName/repoName`, print log and return true', async () => {
   const { consoleLogSpy } = mockConsole()
   await mockModule('@inquirer/confirm', () => ({
-    default: mock(),
+    default: mock(async () => undefined),
   }))
   await mockModule('./utils/openProjectInEditor.js', () => ({
     openProjectInEditor: mock(),
@@ -74,7 +74,7 @@ it('should clone git repo with url of `userName/repoName`, print log and return 
 
 it('should prompt to open project in editor with default false if the option `open` is false by default', async () => {
   mockConsole()
-  const mockConfirm = mock()
+  const mockConfirm = mock(async () => undefined)
   await mockModule('@inquirer/confirm', () => ({
     default: mockConfirm,
   }))
@@ -96,7 +96,7 @@ it('should prompt to open project in editor with default false if the option `op
 it('should open project in editor if the option `open` is true', async () => {
   mockConsole()
   await mockModule('@inquirer/confirm', () => ({
-    default: mock(),
+    default: mock(async () => undefined),
   }))
   const mockOpenProjectInEditor = mock()
   await mockModule('./utils/openProjectInEditor.js', () => ({

@@ -15,7 +15,7 @@ describe('when given project exists', () => {
       openProjectInEditor: async () => undefined,
     }))
     await mockModule('@inquirer/confirm', () => ({
-      default: () => undefined,
+      default: async () => undefined,
     }))
     await ensureDir(join(ROOT_DIR, 'test-name'))
 
@@ -26,7 +26,7 @@ describe('when given project exists', () => {
     await mockModule('./utils/openProjectInEditor', () => ({
       openProjectInEditor: async () => undefined,
     }))
-    const mockConfirm = mock()
+    const mockConfirm = mock(async () => undefined)
     await mockModule('@inquirer/confirm', () => ({
       default: mockConfirm,
     }))
@@ -43,7 +43,7 @@ describe('when given project exists', () => {
     await mockModule('./utils/openProjectInEditor', () => ({
       openProjectInEditor: async () => undefined,
     }))
-    const mockConfirm = mock()
+    const mockConfirm = mock(async () => undefined)
     await mockModule('@inquirer/confirm', () => ({
       default: mockConfirm,
     }))
@@ -58,7 +58,7 @@ describe('when given project exists', () => {
     await mockModule('./utils/openProjectInEditor', () => ({
       openProjectInEditor: async () => undefined,
     }))
-    const mockConfirm = mock()
+    const mockConfirm = mock(async () => undefined)
     await mockModule('@inquirer/confirm', () => ({
       default: mockConfirm,
     }))
@@ -75,7 +75,7 @@ describe('when given project exists', () => {
     await mockModule('./utils/openProjectInEditor', () => ({
       openProjectInEditor: async () => undefined,
     }))
-    const mockConfirm = mock()
+    const mockConfirm = mock(async () => undefined)
     await mockModule('@inquirer/confirm', () => ({
       default: mockConfirm,
     }))

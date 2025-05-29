@@ -49,7 +49,7 @@ describe('Create', () => {
 
   it('should execute creating project when argv[0] is `create`', async () => {
     await mockModule('@inquirer/input', () => ({
-      default: () => '',
+      default: async () => '',
     }))
 
     await main(['create'])
@@ -59,7 +59,7 @@ describe('Create', () => {
 
   it('should use argv[1] as project name if it is not empty', async () => {
     await mockModule('@inquirer/input', () => ({
-      default: () => 'test1',
+      default: async () => 'test1',
     }))
 
     await main(['create', 'test2'])
@@ -69,7 +69,7 @@ describe('Create', () => {
 
   it('should prompt to enter project name if argv[1] is empty', async () => {
     await mockModule('@inquirer/input', () => ({
-      default: () => 'test',
+      default: async () => 'test',
     }))
 
     await main(['create'])
@@ -79,7 +79,7 @@ describe('Create', () => {
 
   it('should the git be true by default, otherwise false if the option `--no-git` is provided', async () => {
     await mockModule('@inquirer/input', () => ({
-      default: () => '',
+      default: async () => '',
     }))
 
     await main(['create', 'test'])
@@ -96,7 +96,7 @@ describe('Create', () => {
 
   it('should the open be false by default, otherwise true if the option `--open` is provided', async () => {
     await mockModule('@inquirer/input', () => ({
-      default: () => '',
+      default: async () => '',
     }))
 
     await main(['create', 'test'])
@@ -130,7 +130,7 @@ describe('Clone', () => {
     await mockModule('./clone-project.js', () => ({
       cloneProject: mockCloneProject,
     }))
-    mockInput = mock()
+    mockInput = mock(async () => undefined)
     await mockModule('@inquirer/input', () => ({
       default: mockInput,
     }))

@@ -21,7 +21,7 @@ it('should return answer with successfully searched term', async () => {
 it('should open project in editor when open is set to true', async () => {
   await createTestProjects([])
   await mockModule('@inquirer/search', () => ({
-    default: () => 'test',
+    default: async () => 'test',
   }))
   const mockOpenProjectInEditor = mock()
   await mockModule('./utils/openProjectInEditor.js', () => ({
