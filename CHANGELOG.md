@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.1](https://github.com/GloryWong/proyecto/compare/v2.4.0...v2.4.1) (2025-05-29)
+
+
+### Bug Fixes
+
+* handle ExitPromptError gracefully ([92c62a0](https://github.com/GloryWong/proyecto/commit/92c62a03e4a561fdb26e271758c4af71df376dbc))
+
 ## [2.4.0](https://github.com/GloryWong/proyecto/compare/v2.3.1...v2.4.0) (2025-05-26)
 
 
