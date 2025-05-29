@@ -1,6 +1,7 @@
 import confirm from '@inquirer/confirm'
 import chalk from 'chalk'
 import { ROOT_DIR } from './constants.js'
+import { handleExitPromptError } from './utils/handleExitPromptError.js'
 import { isValidGitUrl } from './utils/isValidGitUrl.js'
 import { normalizeGitUrl } from './utils/normalizeGitUrl.js'
 import { openProjectInEditor } from './utils/openProjectInEditor.js'
@@ -40,7 +41,7 @@ export async function cloneProject(url: string, options: Options = {}) {
     if (open || await confirm({
       message: 'Do you want to open it?',
       default: false,
-    })) {
+    }).catch(err => handleExitPromptError<boolean>(err))) {
       await openProjectInEditor(name)
     }
 

@@ -5,6 +5,7 @@ import { createEmptyProject } from './create-empty-project.js'
 import { deleteProject } from './delete-project.js'
 import { init } from './init.js'
 import { openProject } from './open-project.js'
+import { handleExitPromptError } from './utils/handleExitPromptError.js'
 import { isValidGitUrl } from './utils/isValidGitUrl.js'
 import { isValidProjectName } from './utils/isValidProjectName.js'
 import { normalizeGitUrl } from './utils/normalizeGitUrl.js'
@@ -46,7 +47,7 @@ export async function main(_argv: string[]) {
         const { error } = isValidProjectName(value)
         return error || true
       },
-    })
+    }).catch(err => handleExitPromptError<string>(err))
 
     return createEmptyProject(name, {
       git: argv.git,
@@ -64,7 +65,7 @@ export async function main(_argv: string[]) {
         const valid = isValidGitUrl(url)
         return valid ? true : `Invalid GitHub we URL: ${url}`
       },
-    })
+    }).catch(err => handleExitPromptError<string>(err))
 
     return cloneProject(url, {
       open: argv.open,

@@ -1,6 +1,7 @@
 import confirm from '@inquirer/confirm'
 import { pathExists } from 'fs-extra'
 import { getProjectPath } from './getProjectPath.js'
+import { handleExitPromptError } from './handleExitPromptError.js'
 import { openProjectInEditor } from './openProjectInEditor.js'
 import { quote } from './quote.js'
 
@@ -25,7 +26,7 @@ export async function projectExists(name: string, options: Options = {}) {
     if (promptToOpen && await confirm({
       message: `Project ${quote(name)} already exists. Do you want to open it?`,
       default: promptToOpenDefault,
-    })) {
+    }).catch(err => handleExitPromptError<boolean>(err))) {
       await openProjectInEditor(name)
     }
 

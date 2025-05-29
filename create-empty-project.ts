@@ -2,6 +2,7 @@ import confirm from '@inquirer/confirm'
 import chalk from 'chalk'
 import { ensureDir } from 'fs-extra'
 import { getProjectPath } from './utils/getProjectPath.js'
+import { handleExitPromptError } from './utils/handleExitPromptError.js'
 import { initGit } from './utils/initGit.js'
 import { isValidProjectName } from './utils/isValidProjectName.js'
 import { openProjectInEditor } from './utils/openProjectInEditor.js'
@@ -38,7 +39,7 @@ export async function createEmptyProject(name: string, options: Options = {}) {
     if (!(await confirm({
       message: `Are you sure to create an empty project called ${quote(name)}?`,
       default: true,
-    }))) {
+    }).catch(err => handleExitPromptError<boolean>(err)))) {
       return false
     }
 
@@ -53,7 +54,7 @@ export async function createEmptyProject(name: string, options: Options = {}) {
     if (open || await confirm({
       message: 'Do you want to open it?',
       default: false,
-    })) {
+    }).catch(err => handleExitPromptError<boolean>(err))) {
       await openProjectInEditor(name)
     }
 

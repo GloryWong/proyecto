@@ -5,6 +5,7 @@ import timestamp from 'iso-timestamp'
 import trash from 'trash'
 import { getEnvPaths } from './getEnvPaths'
 import { getProjectPath } from './getProjectPath'
+import { handleExitPromptError } from './handleExitPromptError'
 import { quote } from './quote'
 
 export async function moveToTrash(name: string) {
@@ -12,7 +13,7 @@ export async function moveToTrash(name: string) {
     if (await confirm({
       message: `Are you sure to delete ${quote(name)}?`,
       default: false,
-    })) {
+    }).catch(err => handleExitPromptError<boolean>(err))) {
       const projectPath = getProjectPath(name)
       if (Bun.which('trash') !== null) {
         await Bun.$`trash ${projectPath}`
