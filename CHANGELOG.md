@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://github.com/GloryWong/proyecto/compare/v2.4.1...v2.5.0) (2025-05-29)
+
+
+### Features
+
+* support initial term for searchProject ([6dd790e](https://github.com/GloryWong/proyecto/commit/6dd790eb5dcc425ce2dad52aa6bbe4caf5441e0c))
+
 ## [2.4.1](https://github.com/GloryWong/proyecto/compare/v2.4.0...v2.4.1) (2025-05-29)
 
 
