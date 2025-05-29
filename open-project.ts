@@ -2,7 +2,7 @@ import chalk from 'chalk'
 import { openProjectInEditor } from './utils/openProjectInEditor.js'
 import { projectExists } from './utils/projectExists.js'
 import { quote } from './utils/quote.js'
-import { searchProject } from './utils/searchProject.js'
+import { searchProjectAndOpen } from './utils/searchProjectAndOpen.js'
 
 export async function openProject(name?: string) {
   try {
@@ -11,7 +11,7 @@ export async function openProject(name?: string) {
     }
     else {
       name && console.log(quote(name), 'does not exist.')
-      await searchProject('Select a project to open:', true)
+      await searchProjectAndOpen('Select a project to open:', name)
     }
 
     return true

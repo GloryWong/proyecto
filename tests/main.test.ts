@@ -231,15 +231,15 @@ it('should show help and return true if `--help` is provided', async () => {
 })
 
 it('should execute searching for a project and open it if neither valid command nor valid option is provided', async () => {
-  const mockSearchProject = mock()
-  await mockModule('./utils/searchProject.js', () => ({
-    searchProject: mockSearchProject,
+  const mockSearchProjectAndOpen = mock()
+  await mockModule('./utils/searchProjectAndOpen.js', () => ({
+    searchProjectAndOpen: mockSearchProjectAndOpen,
   }))
 
   await main(['anything', 'else'])
-  expect(mockSearchProject).toHaveBeenCalledWith(expect.stringMatching(/project/i), true)
+  expect(mockSearchProjectAndOpen).toHaveBeenCalledWith(expect.stringMatching(/project/i), 'anything')
 
-  mockSearchProject.mockClear()
+  mockSearchProjectAndOpen.mockClear()
   await main([])
-  expect(mockSearchProject).toHaveBeenCalledWith(expect.stringMatching(/project/i), true)
+  expect(mockSearchProjectAndOpen).toHaveBeenCalledWith(expect.stringMatching(/project/i), undefined)
 })

@@ -3,7 +3,7 @@ import { searchProject } from '../../utils/searchProject'
 import { createTestProjects } from '../__helpers__/create-test-projects'
 import { mockModule } from '../__helpers__/mock-module'
 
-it('should return answer with successfully searched term', async () => {
+it('should return answer successfully', async () => {
   await createTestProjects(['test'], 5)
   const mockSearch = mock(async () => 'test')
   await mockModule('@inquirer/search', () => ({
@@ -18,17 +18,23 @@ it('should return answer with successfully searched term', async () => {
   }))
 })
 
-it('should open project in editor when open is set to true', async () => {
-  await createTestProjects([])
-  await mockModule('@inquirer/search', () => ({
-    default: async () => 'test',
-  }))
-  const mockOpenProjectInEditor = mock()
-  await mockModule('./utils/openProjectInEditor.js', () => ({
-    openProjectInEditor: mockOpenProjectInEditor,
-  }))
+// it('should use initial given term to search', async () => {
+//   await createTestProjects(['test'], 5)
+//   const mockSearch = mock(async () => 'test')
+//   await mockModule('@inquirer/search', () => ({
+//     default: mockSearch,
+//   }))
+//   const mockProcess = stdin.p
+//   await mockModule('node:process', () => ({
+//     default: {
+//       stdio
+//     }
+//   }))
 
-  await searchProject('', true)
+//   const result = await searchProject('to search', 'test')
 
-  expect(mockOpenProjectInEditor).toHaveBeenCalledWith('test')
-})
+//   expect(result).toBe('test')
+//   expect(mockSearch).toHaveBeenCalledWith(expect.objectContaining({
+//     message: 'to search',
+//   }))
+// })

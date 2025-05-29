@@ -1,13 +1,18 @@
+import process from 'node:process'
 import search from '@inquirer/search'
 import { fuzzyProjects } from './fuzzyProjects.js'
 import { handleExitPromptError } from './handleExitPromptError.js'
 import { listProjects } from './listProjects.js'
-import { openProjectInEditor } from './openProjectInEditor.js'
 
-export async function searchProject(message: string): Promise<string>
-export async function searchProject(message: string, open: boolean): Promise<boolean>
-export async function searchProject(message: string, open = false) {
+export async function searchProject(message: string, term?: string) {
   const names = await listProjects()
+
+  try {
+    if (term) {
+      process.stdin.push(term)
+    }
+  }
+  catch { }
 
   const answer = await search<string>({
     message,
@@ -15,9 +20,6 @@ export async function searchProject(message: string, open = false) {
       return fuzzyProjects(names, term)
     },
   }).catch(err => handleExitPromptError<string>(err))
-  if (open) {
-    return openProjectInEditor(answer)
-  }
 
   return answer
 }

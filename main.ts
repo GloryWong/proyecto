@@ -9,7 +9,7 @@ import { handleExitPromptError } from './utils/handleExitPromptError.js'
 import { isValidGitUrl } from './utils/isValidGitUrl.js'
 import { isValidProjectName } from './utils/isValidProjectName.js'
 import { normalizeGitUrl } from './utils/normalizeGitUrl.js'
-import { searchProject } from './utils/searchProject.js'
+import { searchProjectAndOpen } from './utils/searchProjectAndOpen.js'
 import { showHelp } from './utils/showHelp.js'
 import { showVersion } from './utils/showVersion.js'
 import './package.json' with { type: 'file' } // Instruct `bun compile` to embed the package.json
@@ -88,5 +88,5 @@ export async function main(_argv: string[]) {
   }
 
   // Anything else
-  return searchProject('Select a project to open:', true)
+  return searchProjectAndOpen('Select a project to open:', argv._.at(0)?.trim())
 }

@@ -31,33 +31,33 @@ it('should open the project and return true if passed project name exists', asyn
   expect(result).toBeTrue()
 })
 
-it('should execute searching for a project with open true if passed project name is empty', async () => {
+it('should execute searching for a project if passed project name is empty', async () => {
   mockConsole()
   await mockModule('./utils/openProjectInEditor', () => ({
     openProjectInEditor: mock(),
   }))
-  const mockSearchProject = mock()
-  await mockModule('./utils/searchProject', () => ({
-    searchProject: mockSearchProject,
+  const mockSearchProjectAndOpen = mock()
+  await mockModule('./utils/searchProjectAndOpen', () => ({
+    searchProjectAndOpen: mockSearchProjectAndOpen,
   }))
 
   await openProject()
 
-  expect(mockSearchProject).toHaveBeenCalledWith(expect.any(String), true)
+  expect(mockSearchProjectAndOpen).toHaveBeenCalledWith(expect.any(String), undefined)
 })
 
-it('should print log and execute searching for a project with open true if passed project name does not exists', async () => {
+it('should print log and execute searching for a project with given term if passed project name does not exists', async () => {
   const { consoleLogSpy } = mockConsole()
   await mockModule('./utils/openProjectInEditor', () => ({
     openProjectInEditor: mock(),
   }))
-  const mockSearchProject = mock()
-  await mockModule('./utils/searchProject', () => ({
-    searchProject: mockSearchProject,
+  const mockSearchProjectAndOpen = mock()
+  await mockModule('./utils/searchProjectAndOpen', () => ({
+    searchProjectAndOpen: mockSearchProjectAndOpen,
   }))
 
   await openProject('test')
 
   expect(consoleLogSpy).toHaveBeenCalled()
-  expect(mockSearchProject).toHaveBeenCalledWith(expect.any(String), true)
+  expect(mockSearchProjectAndOpen).toHaveBeenCalledWith(expect.any(String), 'test')
 })
