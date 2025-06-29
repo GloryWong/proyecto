@@ -60,14 +60,14 @@
     "trash": "^9.0.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.15.0",
+    "@antfu/eslint-config": "^4.16.1",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@types/bun": "latest",
     "@types/fs-extra": "^11.0.4",
     "@types/minimist": "^1.2.5",
-    "@types/node": "^22.15.32",
-    "eslint": "^9.29.0",
+    "@types/node": "^22.15.34",
+    "eslint": "^9.30.0",
     "lint-staged": "^16.1.2",
     "simple-git-hooks": "^2.13.0",
     "type-fest": "^4.41.0"
