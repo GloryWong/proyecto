@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.1](https://github.com/GloryWong/proyecto/compare/v2.5.0...v2.5.1) (2025-07-20)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#36](https://github.com/GloryWong/proyecto/issues/36)) ([cb6de60](https://github.com/GloryWong/proyecto/commit/cb6de6014c2f54f41332d77017a261b7dc902013))
+
 ## [2.5.0](https://github.com/GloryWong/proyecto/compare/v2.4.1...v2.5.0) (2025-05-29)
 
 
