@@ -50,7 +50,7 @@
     "@inquirer/input": "^4.2.0",
     "@inquirer/search": "^3.0.16",
     "chalk": "^5.4.1",
-    "conf": "^13.1.0",
+    "conf": "^14.0.0",
     "env-paths": "^3.0.0",
     "fs-extra": "^11.3.0",
     "fuzzysort": "^3.1.0",
