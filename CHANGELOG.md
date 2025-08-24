@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.5.1](https://github.com/GloryWong/proyecto/compare/v2.5.0...v2.5.1) (2025-08-24)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#36](https://github.com/GloryWong/proyecto/issues/36)) ([cb6de60](https://github.com/GloryWong/proyecto/commit/cb6de6014c2f54f41332d77017a261b7dc902013))
+* **deps:** update all non-major dependencies ([#40](https://github.com/GloryWong/proyecto/issues/40)) ([bd06451](https://github.com/GloryWong/proyecto/commit/bd06451f4d917477f54142ae6d3818355076ec3c))
+* **deps:** update all non-major dependencies ([#42](https://github.com/GloryWong/proyecto/issues/42)) ([fe0b604](https://github.com/GloryWong/proyecto/commit/fe0b6048a098094f2af9669852545b48e0d1b6dd))
+* **deps:** update all non-major dependencies ([#43](https://github.com/GloryWong/proyecto/issues/43)) ([c14473e](https://github.com/GloryWong/proyecto/commit/c14473e8a9dfb1a4723b7489648598414e3c1087))
+
 ## [2.5.0](https://github.com/GloryWong/proyecto/compare/v2.4.1...v2.5.0) (2025-05-29)
 
 
