@@ -57,7 +57,7 @@
     "iso-timestamp": "^1.2.0",
     "minimist": "^1.2.8",
     "open-editor": "^5.1.0",
-    "trash": "^9.0.0"
+    "trash": "^10.0.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.19.0",
