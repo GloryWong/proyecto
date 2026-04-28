@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.5.2](https://github.com/GloryWong/proyecto/compare/v2.5.1...v2.5.2) (2026-04-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency trash to v10 ([21ef58e](https://github.com/GloryWong/proyecto/commit/21ef58ebdf7e815534c9d17e19693c8be0376518))
+* **deps:** update dependency trash to v10 ([c495dcb](https://github.com/GloryWong/proyecto/commit/c495dcb7992c9f9599234708fa59fa391b25992d))
+* **pkgjson:** update author ([607d62c](https://github.com/GloryWong/proyecto/commit/607d62c1d9e4748a0de8120493122ac34a8502d1))
+
 ## [2.5.1](https://github.com/GloryWong/proyecto/compare/v2.5.0...v2.5.1) (2026-04-28)
 
 
