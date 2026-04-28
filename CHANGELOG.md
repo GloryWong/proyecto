@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.4](https://github.com/GloryWong/proyecto/compare/v2.5.3...v2.5.4) (2026-04-28)
+
+
+### Bug Fixes
+
+* **ci:** use npm OIDC ([c2b9120](https://github.com/GloryWong/proyecto/commit/c2b9120067d78add5486327b95c1148ecdf32ffb))
+
 ## [2.5.3](https://github.com/GloryWong/proyecto/compare/v2.5.2...v2.5.3) (2026-04-28)
 
 
