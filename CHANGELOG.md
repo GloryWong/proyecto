@@ -1,5 +1,37 @@
 # Changelog
 
+## [2.5.1](https://github.com/GloryWong/proyecto/compare/v2.5.0...v2.5.1) (2026-04-28)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#36](https://github.com/GloryWong/proyecto/issues/36)) ([cb6de60](https://github.com/GloryWong/proyecto/commit/cb6de6014c2f54f41332d77017a261b7dc902013))
+* **deps:** update all non-major dependencies ([#40](https://github.com/GloryWong/proyecto/issues/40)) ([bd06451](https://github.com/GloryWong/proyecto/commit/bd06451f4d917477f54142ae6d3818355076ec3c))
+* **deps:** update all non-major dependencies ([#42](https://github.com/GloryWong/proyecto/issues/42)) ([fe0b604](https://github.com/GloryWong/proyecto/commit/fe0b6048a098094f2af9669852545b48e0d1b6dd))
+* **deps:** update all non-major dependencies ([#43](https://github.com/GloryWong/proyecto/issues/43)) ([c14473e](https://github.com/GloryWong/proyecto/commit/c14473e8a9dfb1a4723b7489648598414e3c1087))
+* **deps:** update all non-major dependencies ([#46](https://github.com/GloryWong/proyecto/issues/46)) ([f2f1a0d](https://github.com/GloryWong/proyecto/commit/f2f1a0d88d274c19b40dc8bc24e1620e9b19c1ed))
+* **deps:** update all non-major dependencies ([#48](https://github.com/GloryWong/proyecto/issues/48)) ([bc003be](https://github.com/GloryWong/proyecto/commit/bc003be76aff80f196ae3a379ca71d06c01fca6c))
+* **deps:** update all non-major dependencies ([#50](https://github.com/GloryWong/proyecto/issues/50)) ([11f5b18](https://github.com/GloryWong/proyecto/commit/11f5b1846917f7621c172eacb5dae82878170e50))
+* **deps:** update all non-major dependencies ([#57](https://github.com/GloryWong/proyecto/issues/57)) ([dc63576](https://github.com/GloryWong/proyecto/commit/dc63576581e0ab097abf8b9b2d4515b78dbe5226))
+* **deps:** update all non-major dependencies ([#61](https://github.com/GloryWong/proyecto/issues/61)) ([2a76cc7](https://github.com/GloryWong/proyecto/commit/2a76cc7160c7f0b475f09fac5844ff7b86f8350c))
+* **deps:** update all non-major dependencies ([#62](https://github.com/GloryWong/proyecto/issues/62)) ([e9871e5](https://github.com/GloryWong/proyecto/commit/e9871e5d9ade809802ff41c96d324be068cc3ecf))
+* **deps:** update all non-major dependencies ([#69](https://github.com/GloryWong/proyecto/issues/69)) ([8d73779](https://github.com/GloryWong/proyecto/commit/8d737799d62e8cca9db711ad673a796fb0895dd6))
+* **deps:** update all non-major dependencies ([#71](https://github.com/GloryWong/proyecto/issues/71)) ([1795ffb](https://github.com/GloryWong/proyecto/commit/1795ffb8cd710101e6772b2958a8ca29526dbf71))
+* **deps:** update dependency @inquirer/confirm to v6 ([35ec4b3](https://github.com/GloryWong/proyecto/commit/35ec4b39cc24135c0c7c734febfa05fd37b2cec5))
+* **deps:** update dependency @inquirer/confirm to v6 ([9bc9fee](https://github.com/GloryWong/proyecto/commit/9bc9fee6e6c64f758fadfe5ed4ae1a0ce21694e7))
+* **deps:** update dependency @inquirer/input to v5 ([81ee4f2](https://github.com/GloryWong/proyecto/commit/81ee4f23e6b86911d1303dbac621429d51d02aef))
+* **deps:** update dependency @inquirer/input to v5 ([034abce](https://github.com/GloryWong/proyecto/commit/034abce08ec6d0f05352f7ab08716a88ced59a85))
+* **deps:** update dependency @inquirer/search to v4 ([12b938d](https://github.com/GloryWong/proyecto/commit/12b938d0ce5a33db1f8ad22aa3dab3d4aab66bb8))
+* **deps:** update dependency @inquirer/search to v4 ([0f2bd1d](https://github.com/GloryWong/proyecto/commit/0f2bd1d845e70658165212f5fdb4c02740d1eb13))
+* **deps:** update dependency conf to v15 ([219b315](https://github.com/GloryWong/proyecto/commit/219b31590d2c5c383bf2c3fe4b5b567e00cee079))
+* **deps:** update dependency conf to v15 ([7a643c9](https://github.com/GloryWong/proyecto/commit/7a643c9032fd5ef919e4dfb035383325da8d770a))
+* **deps:** update dependency env-paths to v4 ([04d8810](https://github.com/GloryWong/proyecto/commit/04d8810b3d68d2a9dadd18bd6ec9a43fb7c21a41))
+* **deps:** update dependency env-paths to v4 ([7fde09c](https://github.com/GloryWong/proyecto/commit/7fde09c277088dca0889c83513c716c7f67553c5))
+* **deps:** update dependency open-editor to v6 ([d8adcd8](https://github.com/GloryWong/proyecto/commit/d8adcd8f51b0b54b11c87a351042c3380df9cb27))
+* **deps:** update dependency open-editor to v6 ([d4fc302](https://github.com/GloryWong/proyecto/commit/d4fc302d3ae92281178c10111261f38c2cdc0564))
+* **deps:** update dependency trash to v10 ([51ec6b6](https://github.com/GloryWong/proyecto/commit/51ec6b6ce7182c4d2c87f00c871a8b06cecd2779))
+* **deps:** update dependency trash to v10 ([b18b90e](https://github.com/GloryWong/proyecto/commit/b18b90e785b0b209041bcace70dc9d7f3c3e5c05))
+
 ## [2.5.0](https://github.com/GloryWong/proyecto/compare/v2.4.1...v2.5.0) (2025-05-29)
 
 
