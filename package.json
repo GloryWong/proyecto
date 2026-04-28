@@ -1,7 +1,7 @@
 {
   "name": "proyecto-cli",
   "type": "module",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "Proyecto is a lightweight CLI tool for managing local projects",
   "author": {
     "name": "Glory Wong",
@@ -57,7 +57,7 @@
     "iso-timestamp": "^1.2.0",
     "minimist": "^1.2.8",
     "open-editor": "^6.0.0",
-    "trash": "^10.1.1"
+    "trash": "^9.0.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^8.2.0",
