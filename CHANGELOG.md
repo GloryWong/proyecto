@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.6](https://github.com/robertwang1001/proyecto/compare/v2.5.5...v2.5.6) (2026-05-15)
+
+
+### Bug Fixes
+
+* update github owner name ([f671242](https://github.com/robertwang1001/proyecto/commit/f671242e21b043422098b8d8fd35b471332bcab6))
+
 ## [2.5.5](https://github.com/robertwang1001/proyecto/compare/v2.5.4...v2.5.5) (2026-05-14)
 
 
