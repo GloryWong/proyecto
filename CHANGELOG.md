@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.5](https://github.com/robertwang1001/proyecto/compare/v2.5.4...v2.5.5) (2026-05-14)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#85](https://github.com/robertwang1001/proyecto/issues/85)) ([9d53913](https://github.com/robertwang1001/proyecto/commit/9d5391378d2c86586f4a5079cfaa2d32cc512f45))
+
 ## [2.5.4](https://github.com/GloryWong/proyecto/compare/v2.5.3...v2.5.4) (2026-04-28)
 
 
