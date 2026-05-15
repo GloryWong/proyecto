@@ -1,12 +1,12 @@
-![GitHub License](https://img.shields.io/github/license/GloryWong/proyecto)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/w/GloryWong/proyecto)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/GloryWong/proyecto/release.yml)
-![GitHub Release](https://img.shields.io/github/v/release/GloryWong/proyecto)
-![GitHub Release Date](https://img.shields.io/github/release-date/GloryWong/proyecto)
-![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/GloryWong/proyecto)
-![GitHub watchers](https://img.shields.io/github/watchers/GloryWong/proyecto)
-![GitHub forks](https://img.shields.io/github/forks/GloryWong/proyecto)
-![GitHub Repo stars](https://img.shields.io/github/stars/GloryWong/proyecto)
+![GitHub License](https://img.shields.io/github/license/robertwang1001/proyecto)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/robertwang1001/proyecto)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/robertwang1001/proyecto/release.yml)
+![GitHub Release](https://img.shields.io/github/v/release/robertwang1001/proyecto)
+![GitHub Release Date](https://img.shields.io/github/release-date/robertwang1001/proyecto)
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/robertwang1001/proyecto)
+![GitHub watchers](https://img.shields.io/github/watchers/robertwang1001/proyecto)
+![GitHub forks](https://img.shields.io/github/forks/robertwang1001/proyecto)
+![GitHub Repo stars](https://img.shields.io/github/stars/robertwang1001/proyecto)
 ![NPM Version](https://img.shields.io/npm/v/proyecto)
 ![NPM Type Definitions](https://img.shields.io/npm/types/proyecto)
 ![NPM Downloads](https://img.shields.io/npm/dw/proyecto)
@@ -22,7 +22,7 @@ Proyecto is a lightweight CLI tool for managing local projects.
 Install with [Homebrew CLI](https://brew.sh/):
 
 ```bash
-brew tap GloryWong/homebrew-tap
+brew tap robertwang1001/homebrew-tap
 brew install proyecto
 ```
 
@@ -81,7 +81,7 @@ Commands:
 
 Contributions are welcome! If you have ideas, bug fixes, or improvements, please
 Open an issue or submit a pull request on the
-[GitHub repository](https://github.com/GloryWong/proyecto).
+[GitHub repository](https://github.com/robertwang1001/proyecto).
 
 ## License
 

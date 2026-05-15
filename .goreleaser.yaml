@@ -17,16 +17,16 @@ archives:
         formats: [zip]
 
 brews:
-  - url_template: 'https://github.com/GloryWong/proyecto/releases/download/{{ .Tag }}/{{ .ArtifactName }}'
+  - url_template: "https://github.com/robertwang1001/proyecto/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
     directory: Formula
     # Caveats for the user of your binary.
     caveats: proyecto --help
-    homepage: 'https://github.com/GloryWong/proyecto'
+    homepage: "https://github.com/robertwang1001/proyecto"
     description: Proyecto is a lightweight CLI tool for managing local projects
     license: MIT
     test: system "#{bin}/proyecto --version"
     # Repository to push the generated files to.
     repository:
-      owner: GloryWong
+      owner: robertwang1001
       name: homebrew-tap
-      token: '{{ .Env.HOMEBREW_GITHUB_TOKEN }}'
+      token: "{{ .Env.HOMEBREW_GITHUB_TOKEN }}"
