@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.7](https://github.com/robertwang1001/proyecto/compare/v2.5.6...v2.5.7) (2026-05-17)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#89](https://github.com/robertwang1001/proyecto/issues/89)) ([b5a27b2](https://github.com/robertwang1001/proyecto/commit/b5a27b24cb9fa7bbd4e160a78faec26d43d5ac69))
+
 ## [2.5.6](https://github.com/robertwang1001/proyecto/compare/v2.5.5...v2.5.6) (2026-05-15)
 
 
